@@ -32,7 +32,7 @@ function openLegal(page){ openPage(page); }
 // On load: if URL has #page, jump IMMEDIATELY (no flicker!)
 (function(){
   var h = window.location.hash.replace('#','');
-  var pages = ['home','work','showcase','collections','elements','chatbot','about','contact','jobs','conferences','academy','faqs','directory','websites','market','pricing','privacy','cookies','legal'];
+  var pages = ['home','work','showcase','collections','elements','chatbot','about','contact','jobs','conferences','academy','faqs','directory','websites','market','pricing','svc-websites','svc-editing','svc-qr','svc-bots','svc-gbp','privacy','cookies','legal'];
   if(pages.indexOf(h) >= 0){
     // Home page ko foran chhupao taake flicker na ho!
     document.addEventListener('DOMContentLoaded', function(){
@@ -218,17 +218,17 @@ font-size:.93em;font-weight:600;cursor:pointer}
     <div class="dd"><button data-nav="services" onclick="openPage('work')">Services ▾</button>
       <div class="dd-panel"><div class="dd-cols">
         <div><h5>🎬 Video Editing</h5>
-          <a onclick="openPage('work')">Reels &amp; Shorts<small>Scroll-stopping edits · from $15</small></a>
+          <a onclick="openPage('svc-editing')">Video Editing<small>Reels &amp; Shorts · from Rs. 2,000</small></a>
           <a onclick="openPage('work')">AI Films<small>AI spokesperson &amp; cinematic</small></a>
           <a onclick="openPage('showcase')">Editing Demos<small>See the style live</small></a></div>
         <div><h5>🌐 Websites</h5>
-          <a onclick="openPage('websites')">Business Websites<small>Animated · mobile-friendly</small></a>
+          <a onclick="openPage('svc-websites')">Business Websites<small>Animated · mobile-friendly</small></a>
           <a onclick="openPage('websites')">Landing Pages<small>From $80 · live in days</small></a>
           <a onclick="openPage('showcase')">Design Showcase<small>Try real demos</small></a></div>
-        <div><h5>🛒 Amazon VA</h5>
-          <a onclick="openPage('market')">Product Research<small>Winning products · from $20</small></a>
-          <a onclick="openPage('market')">Seller Central<small>Full account management</small></a>
-          <a onclick="openPage('work')">Case Work<small>Research samples</small></a></div>
+        <div><h5>🤖 AI Bots &amp; QR</h5>
+          <a onclick="openPage('svc-bots')">AI Chatbots<small>WhatsApp &amp; Instagram · 24/7</small></a>
+          <a onclick="openPage('svc-qr')">QR Digital Menus<small>Scan &amp; order · PKR 8,000</small></a>
+          <a onclick="openPage('svc-gbp')">Google Profile<small>Get found on Maps</small></a></div>
       </div></div></div>
     <div class="dd"><button data-nav="work" onclick="openPage('work')">Work ▾</button>
       <div class="dd-panel"><div class="dd-cols two">
@@ -306,21 +306,21 @@ font-size:.93em;font-weight:600;cursor:pointer}
         <p>Customers scan, menu opens on their phone — photos, prices, always up to date. No more printing costs. Perfect for restaurants &amp; cafes.</p>
         <div class="price">From $30</div>
         <p style="margin-top:12px"><button class="btn btn-g" style="padding:9px 20px" onclick="go('contact')">Get yours →</button></p></div>
-      <div class="card reveal"><img src="./thumb-amazonva.jpg" alt="Amazon virtual assistant" style="width:100%;border-radius:12px;margin-bottom:14px;display:block"><div class="ico">🛒</div><h3>Amazon Virtual Assistant</h3>
-        <p>Product research, sourcing support &amp; complete Seller Central management — listings, inventory, and day-to-day account handling.</p>
-        <div class="price">From $20</div>
-        <p style="margin-top:12px"><button class="btn btn-g" style="padding:9px 20px" onclick="go('contact')">Get started →</button></p></div>
+      <div class="card reveal"><div class="ico">📍</div><h3>Google Business Profile</h3>
+        <p>Get found on Google Search &amp; Maps — complete profile setup, services, photos, and review guidance. Ownership always stays with you.</p>
+        <div class="price">From PKR 5,000</div>
+        <p style="margin-top:12px"><button class="btn btn-g" style="padding:9px 20px" onclick="go('svc-gbp')">Learn more →</button></p></div>
     </div>
   </div></section>
 
   <section class="blk"><div class="wrap">
     <div class="sec-t reveal"><h2>🎥 Featured Work</h2><p>A glimpse — the full gallery lives on the Work page.</p></div>
     <div class="grid2">
-      <div class="vslot reveal"><video src="./bot-demo.mp4" style="width:100%;border-radius:12px;display:block" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()"></video><div class="play">▶</div><small>🤖 AI WhatsApp Bot — answers customers 24/7! Hover to play.</small></div>
-      <div class="vslot reveal"><video src="./qr-menu-demo.mp4" style="width:100%;border-radius:12px;display:block" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()"></video><div class="play">▶</div><small>🍜 QR Digital Menu — scan &amp; order! Hover to play.</small></div>
-      <div class="vslot reveal"><video src="./website-showcase.mp4" style="width:100%;border-radius:12px;display:block" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()"></video><div class="play">▶</div><small>🌐 Website builds — live &amp; animated! Hover to play.</small></div>
-      <div class="vslot reveal"><video src="./instagram-bot-demo.mp4" style="width:100%;border-radius:12px;display:block" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()"></video><div class="play">▶</div><small>📸 Instagram AI Bot — auto DMs! Hover to play.</small></div>
-      <div class="vslot reveal"><video src="./editing-portfolio.mp4" style="width:100%;border-radius:12px;display:block" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()"></video><div class="play">▶</div><small>🎬 Editing magic — before &amp; after! Hover to play.</small></div>
+      <div class="vslot reveal"><video src="./bot-demo.mp4" style="width:100%;border-radius:12px;display:block" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video><div class="play">▶</div><small>🤖 AI WhatsApp Bot — answers customers 24/7! Tap to play.</small></div>
+      <div class="vslot reveal"><video src="./qr-menu-demo.mp4" style="width:100%;border-radius:12px;display:block" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video><div class="play">▶</div><small>🍜 QR Digital Menu — scan &amp; order! Tap to play.</small></div>
+      <div class="vslot reveal"><video src="./website-showcase.mp4" style="width:100%;border-radius:12px;display:block" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video><div class="play">▶</div><small>🌐 Website builds — live &amp; animated! Tap to play.</small></div>
+      <div class="vslot reveal"><video src="./instagram-bot-demo.mp4" style="width:100%;border-radius:12px;display:block" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video><div class="play">▶</div><small>📸 Instagram AI Bot — auto DMs! Tap to play.</small></div>
+      <div class="vslot reveal"><video src="./editing-portfolio.mp4" style="width:100%;border-radius:12px;display:block" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video><div class="play">▶</div><small>🎬 Editing magic — before &amp; after! Tap to play.</small></div>
       <div class="vslot reveal"><img src="./work-aifilm.webp" alt="Cinematic edit preview"><div class="play">▶</div><small>AI Films &amp; cinematic edits — full videos on the Work page</small></div>
     </div>
     <p style="text-align:center;margin-top:26px"><button class="btn btn-p" onclick="go('work')">Open Full Gallery →</button></p>
@@ -340,7 +340,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
     <div class="grid3">
       <div class="testi reveal"><div class="stars">★★★★★</div>"Your review could be here! First clients get featured on this wall."<b>— You? Let's talk →</b></div>
       <div class="testi reveal"><div class="stars">★★★★★</div>"Every project gets my full attention — quality over quantity, always."<b>— BM Digital promise</b></div>
-      <div class="testi reveal"><div class="stars">★★★★★</div>"Websites, videos, Amazon — one partner instead of three freelancers."<b>— The BM Digital way</b></div>
+      <div class="testi reveal"><div class="stars">★★★★★</div>"Websites, videos, bots — one partner instead of three freelancers."<b>— The BM Digital way</b></div>
     </div>
   </div></section>
 
@@ -348,7 +348,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
     <div class="sec-t reveal"><h2>⚙️ How It Works</h2><p>Simple, transparent, no surprises — from first message to final delivery.</p></div>
     <div class="grid3">
       <div class="card reveal"><div class="ico">1️⃣</div><h3>You Reach Out</h3><p>Fill the contact form, DM me on Instagram, or order directly on Fiverr. Tell me what you need — even roughly. I'll ask a few sharp questions to get the complete picture, then give you one clear price and timeline.</p></div>
-      <div class="card reveal"><div class="ico">2️⃣</div><h3>I Create</h3><p>I edit, build, or research. You get real progress updates — never silence. For websites, 50% advance starts the work: the golden rule that protects us both. Questions? Answered within hours, not days.</p></div>
+      <div class="card reveal"><div class="ico">2️⃣</div><h3>I Create</h3><p>I edit, build, or train bots. You get real progress updates — never silence. For websites, 50% advance starts the work: the golden rule that protects us both. Questions? Answered within hours, not days.</p></div>
       <div class="card reveal"><div class="ico">3️⃣</div><h3>You Launch</h3><p>Review the first version, request revisions, approve the final. You receive finished files, live links, and backups. Then you post, launch, and grow — with my support still behind you.</p></div>
     </div>
   </div></section>
@@ -366,11 +366,11 @@ font-size:.93em;font-weight:600;cursor:pointer}
         <p style="margin-top:10px"><b style="color:var(--txt)">Bigger sites add:</b> extra pages, photo galleries, video sections, FAQ accordions, testimonial sliders, and interactive elements from my Design Showcase.</p>
         <p style="margin-top:10px;color:var(--muted)">Best for: local businesses, freelancers, restaurants, clinics — anyone who needs to look professional online.</p>
         <div class="price">From $80</div></div>
-      <div class="card reveal"><div class="ico">🛒</div><h3>Amazon VA</h3>
-        <p><b style="color:var(--txt)">Research includes:</b> a winning-product shortlist, demand &amp; competition analysis, pricing insights, and a step-by-step launch checklist — in a clean, readable report.</p>
-        <p style="margin-top:10px"><b style="color:var(--txt)">Full management adds:</b> verified supplier sourcing support, listing optimization, inventory tracking, and day-to-day Seller Central handling.</p>
-        <p style="margin-top:10px;color:var(--muted)">Best for: new sellers hunting their first winning product, and busy sellers who need a reliable extra pair of hands.</p>
-        <div class="price">From $20</div></div>
+      <div class="card reveal"><div class="ico">🤖</div><h3>AI Chatbots</h3>
+        <p><b style="color:var(--txt)">Every bot includes:</b> answers from your real prices, timings, and services — never guesses — plus automatic sharing of your website, menu, and contact links.</p>
+        <p style="margin-top:10px"><b style="color:var(--txt)">WhatsApp &amp; Instagram bots add:</b> 24/7 auto-replies in customers' own apps, lead capture, and handoff to you on WhatsApp when a human is needed.</p>
+        <p style="margin-top:10px;color:var(--muted)">Best for: restaurants, clinics, salons, and shops that lose customers while they're busy or asleep.</p>
+        <div class="price">From PKR 15,000</div></div>
     </div>
   </div></section>
 
@@ -380,7 +380,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
       <div class="card reveal"><div class="ico">🎥</div><h3>Creators</h3><p>Reels &amp; Shorts that grow your audience while you focus on creating. Consistent posting without the editing burnout.</p></div>
       <div class="card reveal"><div class="ico">🏪</div><h3>Small Businesses</h3><p>A website that looks like a million bucks plus promo videos that turn visitors into paying customers.</p></div>
       <div class="card reveal"><div class="ico">🎤</div><h3>Coaches</h3><p>Authority-building content and landing pages that fill your programs and DMs with the right people.</p></div>
-      <div class="card reveal"><div class="ico">📦</div><h3>Amazon Sellers</h3><p>Product research, sourcing, and account management that saves you dozens of hours every month.</p></div>
+      <div class="card reveal"><div class="ico">🍜</div><h3>Restaurants &amp; Cafes</h3><p>QR digital menus and websites that fill tables — customers scan, see photos and prices, and order without waiting.</p></div>
       <div class="card reveal"><div class="ico">🎓</div><h3>Educators</h3><p>Clear, engaging videos and clean websites for courses, academies, and training programs.</p></div>
       <div class="card reveal"><div class="ico">💡</div><h3>That's You?</h3><p>Then we're already a good fit.</p><p style="margin-top:10px"><button class="btn btn-p" style="padding:10px 22px" onclick="go('contact')">Let's talk →</button></p></div>
     </div>
@@ -398,7 +398,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
   <section class="blk"><div class="wrap">
     <div class="cta-band reveal" id="lets-talk">
       <h2>💬 Let's Talk About Your Project</h2>
-      <p>Tell me what you need — a website, a video, or Amazon help. I reply within 24 hours.</p>
+      <p>Tell me what you need — a website, a video, or a bot. I reply within 24 hours.</p>
       <div class="btn-row">
         <button class="btn btn-p" onclick="go('contact')">Contact Me →</button>
         <button class="btn btn-g" onclick="go('chatbot')">🤖 Ask the AI Bot</button>
@@ -410,7 +410,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
 <!-- ============ WORK ============ -->
 <div id="page-work" class="page">
   <section class="blk"><div class="wrap">
-    <div class="sec-t"><h2>🎬 My Work</h2><p>Every project below, with the story behind it. Videos are being added — check back soon.</p></div>
+    <div class="sec-t"><h2>🎬 My Work</h2><p>Every project below, with the story behind it. Full gallery below — tap any video to watch.</p></div>
     <div class="grid2">
       <div class="work-item reveal"><div class="vslot vert" style="border-style:solid"><video controls playsinline preload="metadata" poster="images/poster-rolex.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000"><source src="./rolex.mp4" type="video/mp4"></video></div>
         <div class="det"><span class="tag">Reels</span><span class="tag">Shorts</span>
@@ -420,11 +420,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
         <div class="det"><span class="tag">Website</span><span class="tag">Animated</span>
           <h3>Animated Business Websites</h3>
           <p>Modern, mobile-friendly sites with animations, contact forms, Google Maps, and smooth page transitions. Designed, built, and deployed live — like this very site.</p></div></div>
-      <div class="work-item reveal"><div class="vslot"><img src="./work-ecommerce.webp" alt="E-commerce project"><div class="play">▶</div><small>Case study on request</small></div>
-        <div class="det"><span class="tag">Amazon VA</span><span class="tag">E-commerce</span>
-          <h3>Amazon Product Research</h3>
-          <p>Winning-product research with competition analysis, supplier sourcing, and launch checklists — the same process behind my VA service. Sample report available.</p></div></div>
-      <div class="work-item reveal"><div class="vslot vert" style="border-style:solid"><video controls playsinline preload="metadata" poster="images/poster-lux.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000"><source src="./luxury.mp4" type="video/mp4"></video></div>
+            <div class="work-item reveal"><div class="vslot vert" style="border-style:solid"><video controls playsinline preload="metadata" poster="images/poster-lux.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000"><source src="./luxury.mp4" type="video/mp4"></video></div>
         <div class="det"><span class="tag">Luxury</span><span class="tag">Cinematic</span>
           <h3>Luxury Cinematic Edit</h3>
           <p>High-end product/lifestyle edit with slow-motion pacing, film-grade color, and elegant typography. Made for brands that want a premium feel.</p></div></div>
@@ -447,7 +443,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
     <div class="grid3">
       <div class="card reveal"><div class="ico">🎬</div><h3>Video Projects</h3><p><b style="color:var(--txt)">You receive:</b> the finished video in MP4 (up to 1080p), in the perfect aspect ratio for your platform (9:16 vertical for Reels/Shorts/TikTok, 16:9 for YouTube), plus revision rounds as per your package.</p><p style="margin-top:8px"><b style="color:var(--txt)">Timeline:</b> 2–5 days depending on package. Rush available.</p><p style="margin-top:8px;color:var(--muted)">No watermarks. Ever.</p></div>
       <div class="card reveal"><div class="ico">🌐</div><h3>Website Projects</h3><p><b style="color:var(--txt)">You receive:</b> a live, working website link (deployed, not just files), the complete source code as a ZIP backup, a short guide on updating text/images, and launch-day support.</p><p style="margin-top:8px"><b style="color:var(--txt)">Timeline:</b> 3–7 days depending on page count. Domain connection available as an add-on.</p><p style="margin-top:8px;color:var(--muted)">You own everything — 100%.</p></div>
-      <div class="card reveal"><div class="ico">🛒</div><h3>VA Projects</h3><p><b style="color:var(--txt)">You receive:</b> a clean research report (product tables, demand/competition analysis, summary), a verified supplier shortlist where applicable, and a launch or action checklist.</p><p style="margin-top:8px"><b style="color:var(--txt)">Timeline:</b> 3–7 days depending on depth. Management plans are ongoing.</p><p style="margin-top:8px;color:var(--muted)">Real methodology. No fake data, ever.</p></div>
+      <div class="card reveal"><div class="ico">🤖</div><h3>AI Chatbot Projects</h3><p><b style="color:var(--txt)">You receive:</b> a trained chatbot for WhatsApp or Instagram, loaded with your business info, FAQs, and menu or services, plus a demo video showing it answering.</p><p style="margin-top:8px"><b style="color:var(--txt)">Timeline:</b> 3–5 days depending on setup. Monthly maintenance available.</p><p style="margin-top:8px;color:var(--muted)">Real answers from your business info. No made-up replies, ever.</p></div>
     </div>
   </div></section>
 
@@ -463,7 +459,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
   <section class="blk"><div class="wrap">
     <div class="sec-t"><h2>About BM Digital</h2><p>The person behind the pixels — my story, my process, my promise.</p></div>
     <div class="card reveal" style="max-width:820px;margin:0 auto"><h3>👋 Hi, I'm Bilal Mughal</h3>
-      <p>I'm a video editor, website builder, and Amazon virtual assistant from Pakistan. What started as a passion for editing Reels grew into a full creative service: I build animated websites, edit scroll-stopping short-form videos, and help Amazon sellers grow their businesses.</p>
+      <p>I'm a video editor, website builder, and AI chatbot developer from Pakistan. What started as a passion for editing Reels grew into a full creative service: I build animated websites, edit scroll-stopping short-form videos, and build AI chatbots that answer customers 24/7.</p>
       <p style="margin-top:12px">My rule is simple: <b style="color:var(--gold)">quality you can see, communication you can trust.</b> No agency fluff, no middlemen, no disappearing acts — you work directly with me, from the first message to the final delivery.</p></div>
   </div></section>
 
@@ -473,7 +469,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
       <p>Like most great stories, mine started with curiosity. I picked up video editing because I was fascinated by how a few cuts, some music, and the right pacing could turn ordinary footage into something people couldn't stop watching. I spent countless nights learning — transitions, color grading, sound design, storytelling — one skill at a time.</p>
       <p>Then came the Reels era. Short-form video exploded, and I was ready. I edited <b style="color:var(--txt)">Reels, Shorts, and TikToks</b>, learning what makes people stop scrolling: the hook in the first 3 seconds, cuts on the beat, captions that pop. Each project taught me something new.</p>
       <p>But I didn't stop at video. I noticed small businesses around me struggling with the same problem: they needed an online presence but couldn't afford agencies. So I learned web development — clean HTML, CSS, and JavaScript — and started building <b style="color:var(--txt)">modern, animated, mobile-friendly websites</b> that look like they cost ten times more.</p>
-      <p>Then came e-commerce. I dove into Amazon — product research, sourcing, Seller Central management — and added <b style="color:var(--txt)">Amazon Virtual Assistant</b> to my services. Today, BM Digital is a one-person creative studio covering the three things every modern business needs: a website that impresses, videos that attract, and e-commerce that sells.</p>
+      <p>Then came AI. I built chatbots that answer customers around the clock — on WhatsApp and Instagram — and added <b style="color:var(--txt)">AI chatbots</b> and <b style="color:var(--txt)">QR digital menus</b> to my services. Today, BM Digital is a one-person creative studio covering the things every modern business needs: a website that impresses, videos that attract, and bots that never sleep.</p>
       <p>I'm still learning every single day. New editing techniques, new web animations, new AI tools — if it can make my clients' content better, I want to master it. That's the journey, and it's just getting started.</p>
     </div>
   </div></section>
@@ -489,22 +485,22 @@ font-size:.93em;font-weight:600;cursor:pointer}
         <p><b style="color:var(--txt)">Custom-coded websites</b> (HTML/CSS/JavaScript) — no bloated themes, no page-builder slowness. Animated, mobile-friendly, and fast.</p>
         <p style="margin-top:10px">Every site includes: contact forms, Google Maps, social links, smooth animations, and <b style="color:var(--txt)">live deployment</b> — you get a working link, not just files.</p>
         <p style="margin-top:10px">From single landing pages to full multi-page business sites, plus interactive elements like chat widgets, FAQ accordions, and animated showcases.</p></div>
-      <div class="card reveal"><div class="ico">🛒</div><h3>Amazon Virtual Assistant</h3>
-        <p><b style="color:var(--txt)">Product Research:</b> winning-product reports with demand analysis, competition checks, and pricing insights.</p>
-        <p style="margin-top:10px"><b style="color:var(--txt)">Sourcing Support:</b> verified supplier shortlists and outreach guidance.</p>
-        <p style="margin-top:10px"><b style="color:var(--txt)">Seller Central Management:</b> listings, inventory tracking, and day-to-day account handling — your store, professionally run.</p></div>
+      <div class="card reveal"><div class="ico">🤖</div><h3>AI Chatbots</h3>
+        <p><b style="color:var(--txt)">WhatsApp Bots:</b> auto-replies to customer questions from your real business info — prices, timings, bookings, and directions.</p>
+        <p style="margin-top:10px"><b style="color:var(--txt)">Instagram Bots:</b> instant DM replies that capture leads while you're busy or asleep.</p>
+        <p style="margin-top:10px"><b style="color:var(--txt)">Website Chatbots:</b> chat and voice bots for your site that greet visitors and hand over to you on WhatsApp when a human is needed.</p></div>
     </div>
   </div></section>
 
   <section class="blk"><div class="wrap">
     <div class="sec-t reveal"><h2>⚙️ My Process</h2><p>How every project runs — no surprises.</p></div>
     <div class="grid3">
-      <div class="card reveal"><div class="ico">1️⃣</div><h3>Discover</h3><p>You tell me what you need — footage, business details, or product goals. I ask a few sharp questions so we start aligned. For websites, I take 50% advance here — the golden rule that protects us both.</p></div>
-      <div class="card reveal"><div class="ico">2️⃣</div><h3>Build</h3><p>I get to work — editing, coding, or researching. You get clear progress updates, not silence. Questions get answered within hours.</p></div>
+      <div class="card reveal"><div class="ico">1️⃣</div><h3>Discover</h3><p>You tell me what you need — footage, business details, or bot questions. I ask a few sharp questions so we start aligned. For websites, I take 50% advance here — the golden rule that protects us both.</p></div>
+      <div class="card reveal"><div class="ico">2️⃣</div><h3>Build</h3><p>I get to work — editing, coding, or training bots. You get clear progress updates, not silence. Questions get answered within hours.</p></div>
       <div class="card reveal"><div class="ico">3️⃣</div><h3>Refine</h3><p>You review the first version. We revise together — every package includes revisions, and I don't disappear after delivery.</p></div>
     </div>
     <div class="grid3" style="margin-top:20px">
-      <div class="card reveal"><div class="ico">4️⃣</div><h3>Deliver &amp; Launch</h3><p>Final files, live links, backups — everything handed over cleanly. Websites go live; videos are ready to post; research is ready to act on.</p></div>
+      <div class="card reveal"><div class="ico">4️⃣</div><h3>Deliver &amp; Launch</h3><p>Final files, live links, backups — everything handed over cleanly. Websites go live; videos are ready to post; bots are ready to answer.</p></div>
       <div class="card reveal"><div class="ico">5️⃣</div><h3>Support</h3><p>Something needs tweaking after launch? I'm still here. Ongoing support and monthly packages available for long-term partners.</p></div>
       <div class="card reveal"><div class="ico">🤝</div><h3>Honesty First</h3><p>If a request is outside my skills, I'll tell you plainly instead of faking it. I'd rather lose a project than deliver something mediocre.</p></div>
     </div>
@@ -514,8 +510,8 @@ font-size:.93em;font-weight:600;cursor:pointer}
     <div class="sec-t reveal"><h2>🧰 Tools I Use</h2></div>
     <div class="card reveal" style="max-width:820px;margin:0 auto;text-align:center">
       <p><span class="kbd">CapCut</span> <span class="kbd">AI Video Tools</span> <span class="kbd">HTML5</span> <span class="kbd">CSS3</span> <span class="kbd">JavaScript</span></p>
-      <p style="margin-top:12px"><span class="kbd">Netlify</span> <span class="kbd">Amazon Seller Central</span> <span class="kbd">Canva</span> <span class="kbd">Google Workspace</span></p>
-      <p style="margin-top:14px;color:var(--muted)">The right tool for each job — editing in CapCut, websites in clean custom code, Amazon work inside Seller Central.</p>
+      <p style="margin-top:12px"><span class="kbd">Netlify</span> <span class="kbd">Cloudflare Pages</span> <span class="kbd">Canva</span> <span class="kbd">Google Workspace</span></p>
+      <p style="margin-top:14px;color:var(--muted)">The right tool for each job — editing in CapCut, websites in clean custom code, bots on WhatsApp & Instagram.</p>
     </div>
   </div></section>
 
@@ -524,7 +520,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
     <div class="grid3">
       <div class="card reveal"><div class="ico">🎬</div><h3>2023 — The Editing Years</h3><p>Started editing. Learned cuts, transitions, grading, sound — and fell in love with short-form storytelling.</p></div>
       <div class="card reveal"><div class="ico">📱</div><h3>2024 — The Reels Era</h3><p>Went deep into Reels, Shorts &amp; TikToks. Cracked the formula: hook fast, cut on beat, caption everything.</p></div>
-      <div class="card reveal"><div class="ico">🌐</div><h3>2025 — Websites + Amazon</h3><p>Added website development and Amazon VA services. BM Digital became a full creative studio.</p></div>
+      <div class="card reveal"><div class="ico">🌐</div><h3>2025 — Websites</h3><p>Added website development services. BM Digital became a full creative studio.</p></div>
     </div>
     <div class="grid3" style="margin-top:20px">
       <div class="card reveal"><div class="ico">🚀</div><h3>2026 — Going Pro</h3><p>Launched on Fiverr with three service lanes, built this portfolio site, and started taking on clients worldwide.</p></div>
@@ -543,7 +539,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
       <div class="reveal"><form class="cf" onsubmit="return sendMail(event)">
         <input id="cf-name" required placeholder="Your name">
         <input id="cf-email" type="email" required placeholder="Your email">
-        <select id="cf-service"><option>Website Development</option><option>Video Editing</option><option>Amazon Virtual Assistant</option><option>Something else</option></select>
+        <select id="cf-service"><option>Website Development</option><option>Video Editing</option><option>AI Chatbot</option><option>QR Digital Menu</option><option>Something else</option></select>
         <textarea id="cf-msg" rows="5" required placeholder="Tell me about your project..."></textarea>
         <button class="btn btn-p" type="submit">Send Message →</button>
       </form></div>
@@ -559,7 +555,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
     <div class="grid3">
       <div class="card reveal"><div class="ico">🎬</div><h3>For Video Editing</h3><p>1. What kind of video? (Reel / ad / cinematic)<br>2. Your footage link (Google Drive / Dropbox)<br>3. Your deadline<br>4. One video you like, as a style reference<br>5. Any must-include text or branding</p></div>
       <div class="card reveal"><div class="ico">🌐</div><h3>For a Website</h3><p>1. Business name &amp; city<br>2. Pages you need (Home, Menu, Contact...)<br>3. Your logo, text &amp; photos (or I guide you)<br>4. A website style you admire<br>5. Do you have a domain already?</p></div>
-      <div class="card reveal"><div class="ico">🛒</div><h3>For Amazon VA</h3><p>1. New seller or existing store?<br>2. Your product budget range<br>3. What you need: research, sourcing, or full management<br>4. Your timeline<br>5. Marketplace (US/UK/other)</p></div>
+      <div class="card reveal"><div class="ico">🤖</div><h3>For AI Chatbots</h3><p>1. WhatsApp, Instagram, or website bot?<br>2. Your business type &amp; services<br>3. Common customer questions<br>4. Your menu / services list &amp; prices<br>5. Your timeline</p></div>
     </div>
   </div></section>
 
@@ -623,7 +619,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
     <div class="sec-t"><h2>🤖 BM Bot</h2><p>Ask about services, pricing, or how to order. <b style="color:var(--gold)">Demo version</b> — the real one answers from your business data.</p></div>
     <div class="chatbox reveal">
       <div class="chat-head">🤖 BM Bot <span style="font-weight:400;font-size:.8em">· demo · typically replies instantly</span></div>
-      <div class="chat-msgs" id="chatMsgs"><div class="msg bot">Hi! I'm BM Bot 👋 Ask me about websites, video editing, Amazon VA, pricing — or how to start a project!</div></div>
+      <div class="chat-msgs" id="chatMsgs"><div class="msg bot">Hi! I'm BM Bot 👋 Ask me about websites, video editing, AI chatbots, pricing — or how to start a project!</div></div>
       <div class="chip-row">
         <button class="chip" onclick="askChip('How much is a website?')">💰 Website price?</button>
         <button class="chip" onclick="askChip('What video editing do you offer?')">🎬 Video editing?</button>
@@ -649,7 +645,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
       <div class="card reveal"><p>"Do you offer discounts?"</p></div>
       <div class="card reveal"><p>"How do I order?"</p></div>
       <div class="card reveal"><p>"What video editing do you do?"</p></div>
-      <div class="card reveal"><p>"Tell me about Amazon VA"</p></div>
+      <div class="card reveal"><p>"Tell me about AI chatbots"</p></div>
       <div class="card reveal"><p>"Who is Bilal?"</p></div>
     </div>
     <p style="text-align:center;margin-top:22px;color:var(--muted)">Scroll up and try one in the chat 👆</p>
@@ -833,7 +829,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
   <section class="blk"><div class="wrap">
     <div class="sec-t"><h2>💼 Jobs</h2><p>Work with BM Digital — as a client or a collaborator.</p></div>
     <div class="grid2">
-      <div class="card reveal"><div class="ico">🤝</div><h3>Hire Me (Freelance)</h3><p>I'm currently accepting freelance projects in video editing, website development &amp; Amazon VA work. Direct, fast, no agency markup.</p><p style="margin-top:14px"><button class="btn btn-p" onclick="go('contact')">Hire me →</button></p></div>
+      <div class="card reveal"><div class="ico">🤝</div><h3>Hire Me (Freelance)</h3><p>I'm currently accepting freelance projects in video editing, website development &amp; AI chatbot work. Direct, fast, no agency markup.</p><p style="margin-top:14px"><button class="btn btn-p" onclick="go('contact')">Hire me →</button></p></div>
       <div class="card reveal"><div class="ico">🎨</div><h3>Collaborate</h3><p>Thumbnail designers, scriptwriters, voice artists — if your skill complements mine, let's create together and split the credit.</p><p style="margin-top:14px"><button class="btn btn-g" onclick="go('contact')">Pitch me →</button></p></div>
     </div>
     <div class="info-card reveal" style="margin-top:22px;max-width:720px;margin-left:auto;margin-right:auto;text-align:center">
@@ -875,12 +871,12 @@ font-size:.93em;font-weight:600;cursor:pointer}
     <div class="sec-t"><h2>🛍️ Market — Services &amp; Pricing</h2><p>Everything I sell, in one place. Order via Fiverr or direct.</p></div>
     <table class="plain reveal"><tr><th>Service</th><th>Starter</th><th>Standard</th><th>Premium</th></tr>
     <tr><td><b>🎬 Video Editing</b></td><td>$15 · 1 Reel</td><td>$35 · 3 videos</td><td>$70 · 5 videos + extras</td></tr>
-    <tr><td><b>🛒 Amazon VA</b></td><td>$20 · Research report</td><td>$50 · + Sourcing</td><td>$100 · Full management</td></tr>
-    <tr><td><b>🌐 Websites</b></td><td>$80 · Landing page</td><td>$150 · 5-page site</td><td>$300 · 10-page site</td></tr></table>
+        <tr><td><b>🌐 Websites</b></td><td>$80 · Landing page</td><td>$150 · 5-page site</td><td>$300 · 10-page site</td></tr>
+    <tr><td><b>🤖 AI Chatbots</b></td><td>PKR 15,000 · Website bot</td><td>PKR 20,000 · Instagram bot</td><td>PKR 30,000 · WhatsApp bot</td></tr></table>
     <div class="grid3" style="margin-top:24px">
       <div class="card reveal"><div class="ico">🎬</div><h3>For Creators</h3><p>Reels, Shorts &amp; TikToks that stop the scroll.</p></div>
       <div class="card reveal"><div class="ico">🏪</div><h3>For Small Businesses</h3><p>Websites + promo videos that bring customers.</p></div>
-      <div class="card reveal"><div class="ico">📦</div><h3>For Amazon Sellers</h3><p>Research, sourcing &amp; account management.</p></div>
+      <div class="card reveal"><div class="ico">🍜</div><h3>For Restaurants</h3><p>QR menus + websites that fill tables.</p></div>
     </div>
       <section class="blk"><div class="wrap">
     <div class="sec-t reveal"><h2>🎬 Video Editing — Tiers In Detail</h2></div>
@@ -892,11 +888,11 @@ font-size:.93em;font-weight:600;cursor:pointer}
   </div></section>
 
   <section class="blk"><div class="wrap">
-    <div class="sec-t reveal"><h2>🛒 Amazon VA — Tiers In Detail</h2></div>
+    <div class="sec-t reveal"><h2>🤖 AI Chatbots — Tiers In Detail</h2></div>
     <div class="grid3">
-      <div class="card reveal"><h3>Research Report — $20</h3><p><b style="color:var(--txt)">Includes:</b> 5 winning-product opportunities with demand/competition analysis, summary + tables, 1 revision, 3-day delivery.</p><p style="margin-top:8px;color:var(--muted)">Perfect for: new sellers choosing product #1.</p></div>
-      <div class="card reveal"><h3>Research + Sourcing — $50</h3><p><b style="color:var(--txt)">Includes:</b> 10 products + verified supplier shortlist, presentation-ready report, 2 revisions, 5-day delivery.</p><p style="margin-top:8px;color:var(--muted)">Perfect for: sellers ready to contact suppliers.</p></div>
-      <div class="card reveal"><h3>Complete VA — $100</h3><p><b style="color:var(--txt)">Includes:</b> everything in Standard + 1 full week of Seller Central management (listings, inventory, daily handling), 3 revisions, 7-day delivery.</p><p style="margin-top:8px;color:var(--muted)">Perfect for: busy sellers who want it handled.</p></div>
+      <div class="card reveal"><h3>Website Chatbot — PKR 15,000</h3><p><b style="color:var(--txt)">Includes:</b> chatbot on your website answering FAQs from your business info, contact links, 1 revision, 3-day delivery.</p><p style="margin-top:8px;color:var(--muted)">Perfect for: websites that lose visitors after hours.</p></div>
+      <div class="card reveal"><h3>Instagram Bot — PKR 20,000</h3><p><b style="color:var(--txt)">Includes:</b> auto-replies in Instagram DMs, lead capture, handoff to WhatsApp, 2 revisions, 5-day delivery.</p><p style="margin-top:8px;color:var(--muted)">Perfect for: creators and shops drowning in DMs.</p></div>
+      <div class="card reveal"><h3>WhatsApp Bot — PKR 30,000</h3><p><b style="color:var(--txt)">Includes:</b> everything in Instagram + WhatsApp auto-replies, menu and order help, 3 revisions, 7-day delivery. Maintenance PKR 5,000/month.</p><p style="margin-top:8px;color:var(--muted)">Perfect for: businesses whose customers live on WhatsApp.</p></div>
     </div>
   </div></section>
 
@@ -928,6 +924,12 @@ font-size:.93em;font-weight:600;cursor:pointer}
         <button class="btn btn-g" style="padding:8px 16px;margin:4px" onclick="go('market')">Market</button>
         <button class="btn btn-g" style="padding:8px 16px;margin:4px" onclick="go('pricing')">Pricing</button>
         <button class="btn btn-g" style="padding:8px 16px;margin:4px" onclick="go('chatbot')">AI Chat</button></p></div>
+      <div class="card reveal"><h3>🎯 Service Pages</h3><p>
+        <button class="btn btn-g" style="padding:8px 16px;margin:4px" onclick="go('svc-websites')">Website Development</button>
+        <button class="btn btn-g" style="padding:8px 16px;margin:4px" onclick="go('svc-editing')">Video Editing</button>
+        <button class="btn btn-g" style="padding:8px 16px;margin:4px" onclick="go('svc-qr')">QR Digital Menus</button>
+        <button class="btn btn-g" style="padding:8px 16px;margin:4px" onclick="go('svc-bots')">AI Chatbots</button>
+        <button class="btn btn-g" style="padding:8px 16px;margin:4px" onclick="go('svc-gbp')">Google Profile Setup</button></p></div>
       <div class="card reveal"><h3>📚 Resources</h3><p>
         <button class="btn btn-g" style="padding:8px 16px;margin:4px" onclick="go('academy')">Academy</button>
         <button class="btn btn-g" style="padding:8px 16px;margin:4px" onclick="go('faqs')">FAQs</button>
@@ -947,8 +949,8 @@ font-size:.93em;font-weight:600;cursor:pointer}
     <div class="sec-t reveal"><h2>🧭 Directory Guide</h2><p>What each section is for — so you never get lost.</p></div>
     <div class="grid2">
       <div class="card reveal"><h3>🏠 Main Pages</h3><p><b style="color:var(--txt)">Home</b> — the big picture: services, process, reviews.<br><b style="color:var(--txt)">Work</b> — portfolio with real videos &amp; project details.<br><b style="color:var(--txt)">About Us</b> — my story, process, and journey.<br><b style="color:var(--txt)">Contact Us</b> — get a quote, ask anything.</p></div>
-      <div class="card reveal"><h3>🛠️ Services</h3><p><b style="color:var(--txt)">Websites</b> — packages, process, website FAQs.<br><b style="color:var(--txt)">Market</b> — every service &amp; tier with prices.<br><b style="color:var(--txt)">Pricing</b> — Starter / Growth / Custom plans.<br><b style="color:var(--txt)">AI Chat</b> — ask BM Bot anything, instantly.</p></div>
-      <div class="card reveal"><h3>📚 Resources</h3><p><b style="color:var(--txt)">Academy</b> — free detailed lessons (editing, websites, Amazon).<br><b style="color:var(--txt)">FAQs</b> — 15 answers to common questions.<br><b style="color:var(--txt)">Collections</b> — curated sets of my best work.<br><b style="color:var(--txt)">Elements</b> — UI components I build.<br><b style="color:var(--txt)">Showcase</b> — live interactive demos.</p></div>
+      <div class="card reveal"><h3>🛠️ Services</h3><p><b style="color:var(--txt)">Websites</b> — packages, process, website FAQs.<br><b style="color:var(--txt)">Market</b> — every service &amp; tier with prices.<br><b style="color:var(--txt)">Pricing</b> — Starter / Growth / Custom plans.<br><b style="color:var(--txt)">AI Chat</b> — ask BM Bot anything, instantly.<br><b style="color:var(--txt)">Service Pages</b> — dedicated pages for each of my 5 services.</p></div>
+      <div class="card reveal"><h3>📚 Resources</h3><p><b style="color:var(--txt)">Academy</b> — free detailed lessons (editing, websites, AI bots).<br><b style="color:var(--txt)">FAQs</b> — 26 answers to common questions.<br><b style="color:var(--txt)">Collections</b> — curated sets of my best work.<br><b style="color:var(--txt)">Elements</b> — UI components I build.<br><b style="color:var(--txt)">Showcase</b> — live interactive demos.</p></div>
       <div class="card reveal"><h3>🏢 Company &amp; Legal</h3><p><b style="color:var(--txt)">Jobs</b> — hire me / collaborate with me.<br><b style="color:var(--txt)">Conferences</b> — talks &amp; event invites.<br><b style="color:var(--txt)">Privacy / Cookies / Legal Terms</b> — the fine print, in plain words.</p></div>
     </div>
   </div></section>
@@ -995,29 +997,41 @@ font-size:.93em;font-weight:600;cursor:pointer}
 <div id="page-faqs" class="page">
   <section class="blk"><div class="wrap" style="max-width:800px">
     <div class="sec-t"><h2>❓ FAQs</h2><p>Answers to common questions — <button class="btn btn-g" style="padding:6px 16px;margin-left:6px" onclick="go('contact')">still stuck? Contact me</button></p></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Do you edit videos online? <span>＋</span></button><div class="a">Yes — everything happens online. Send your footage via Google Drive or WhatsApp, I edit, and you get the finished video back as a download link. No in-person meeting needed.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">What video formats can you work with? <span>＋</span></button><div class="a">MP4, MOV, AVI and most common formats. I deliver in MP4 (up to 1080p) — perfect for Instagram, YouTube &amp; TikTok.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">I'm a beginner — how do we start? <span>＋</span></button><div class="a">Just message me what you need — even roughly. I'll ask a few simple questions and guide you through the rest. No technical knowledge required.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Do you edit vertical videos for phones? <span>＋</span></button><div class="a">Absolutely — 9:16 vertical is my specialty: Reels, Shorts &amp; TikToks, edited for mobile-first viewing.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Is there a file size limit? <span>＋</span></button><div class="a">No strict limit. For large files, a Google Drive link works best — I'll handle the rest.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Will my video have a watermark? <span>＋</span></button><div class="a">Never. Delivered work is 100% clean — no watermarks, no branding, unless you ask for it.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How fast is delivery? <span>＋</span></button><div class="a">Reels: 2–3 days. Websites: 3–7 days depending on size. Amazon research: 3–5 days. Rush delivery available — just ask.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How do revisions work? <span>＋</span></button><div class="a">Every package includes revisions (1–5 depending on tier). We refine until you're happy — I don't disappear after delivery.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How do I pay? <span>＋</span></button><div class="a">Via Fiverr (with buyer protection) or directly via Payoneer / bank / JazzCash. For websites, I take 50% advance before starting.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Do you offer monthly packages? <span>＋</span></button><div class="a">Yes! The Growth plan covers monthly content. See the Pricing page or message me for a custom quote.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How much does a website cost? <span>＋</span></button><div class="a">Simple websites start at PKR 10,000, Business websites at PKR 18,000, and Complete websites at PKR 30,000. Every website starts with a FREE 1-page demo.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">What is the FREE 1-page demo? <span>＋</span></button><div class="a">Before you pay anything, I build a free 1-page demo of your website so you can see the design and quality first. If you like it, we continue to the full website.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Why do you take 50% advance? <span>＋</span></button><div class="a">The 50% advance confirms the order and covers the work time. You pay the remaining 50% only when the website is delivered.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How long does a website take? <span>＋</span></button><div class="a">Most websites are ready in 3 to 7 days after the advance and your content are received.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">What is included in a website? <span>＋</span></button><div class="a">Mobile-friendly pages, your services and prices, photos, WhatsApp and call buttons, a contact form, Google Map location, and basic on-page SEO.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Is the domain cost included? <span>＋</span></button><div class="a">The domain is bought separately in your name after the advance. The service fee and the domain fee are always confirmed upfront, with no hidden extras.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">What if I want changes after delivery? <span>＋</span></button><div class="a">Every package includes revisions. We refine the website together until you are happy, and monthly maintenance is available if you want ongoing updates.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How much does video editing cost? <span>＋</span></button><div class="a">One reel costs Rs. 2,000, and a pack of 5 reels costs Rs. 8,000. First-time brand collaborations get 1 to 2 free sample edits.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How long does a reel take to edit? <span>＋</span></button><div class="a">Most reels are delivered in 2 to 3 days after I receive your raw clips.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">What do you need from me to edit a video? <span>＋</span></button><div class="a">Just your raw video clips and any style or music preference. I handle cuts, captions, color grading, and the final vertical format.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">What is a QR digital menu? <span>＋</span></button><div class="a">A mobile-friendly online menu page for your restaurant with photos, descriptions, and prices. Customers scan a QR code on the table and see the full menu on their phone.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How much does a QR menu cost? <span>＋</span></button><div class="a">A QR digital menu costs PKR 8,000 one-time in Pakistan and $30 for international clients. It includes the live menu page and the QR code image.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">What do you need to build my QR menu? <span>＋</span></button><div class="a">Your menu (photo or list of dishes and prices), food photos, restaurant name and logo, WhatsApp number, and address.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Can I update my QR menu later? <span>＋</span></button><div class="a">Yes. Prices and dishes can be updated without reprinting anything, because the menu lives online behind the same QR code.</div></div>
   </div></section>
   <section class="blk"><div class="wrap" style="max-width:800px">
     <div class="sec-t reveal"><h2>💼 More Answers</h2><p>Business questions, answered straight.</p></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Do you give discounts? <span>＋</span></button><div class="a">Students and non-profits get special discounts — just mention it when you contact me. Bulk/monthly work also gets better rates than one-offs.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Can you handle urgent work? <span>＋</span></button><div class="a">Often yes. Rush delivery is available for most services at an extra fee — tell me your deadline and I'll tell you honestly if it's doable.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Who owns the final files? <span>＋</span></button><div class="a">You do — 100%, on full payment. Videos, website code, reports: all yours, with no strings attached.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Will you sign an NDA? <span>＋</span></button><div class="a">Yes. For sensitive projects (unlaunched products, private campaigns), I'm happy to sign a non-disclosure agreement before we start.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Can I get content every month? <span>＋</span></button><div class="a">That's exactly what the Growth plan is for — monthly video packs (or ongoing VA support) at a better rate than one-offs. See the Pricing page.</div></div>
-    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">What if my project needs something you don't offer? <span>＋</span></button><div class="a">I'll tell you straight — and if I know someone good (a collaborator from my network), I'll point you to them. I'd rather lose a project than fake it.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How much does a WhatsApp AI bot cost? <span>＋</span></button><div class="a">A WhatsApp AI bot costs PKR 30,000, including setup with your business information.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How much does an Instagram AI bot cost? <span>＋</span></button><div class="a">An Instagram DM bot costs PKR 20,000, including setup with your business information.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How much does a website chatbot cost? <span>＋</span></button><div class="a">A website chatbot costs PKR 15,000. A website voice bot costs PKR 25,000.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Is there a monthly fee for bots? <span>＋</span></button><div class="a">Bot maintenance is PKR 5,000 per month, which covers updates and support. It is optional and confirmed before we start.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">What can an AI bot do for my business? <span>＋</span></button><div class="a">It answers customer questions 24/7, shares prices and links, and hands over to you on WhatsApp when a customer wants to talk to a human.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How much does Google Business Profile setup cost? <span>＋</span></button><div class="a">Profile setup costs PKR 5,000 standalone. The Website plus Profile bundle costs PKR 25,000, and monthly management is PKR 2,000 per month.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">What do you need to set up my Google profile? <span>＋</span></button><div class="a">Your business name, service areas, phone number, website link, and a few photos. Ownership stays with you.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How can I pay you? <span>＋</span></button><div class="a">You can pay through Fiverr with buyer protection, or directly via Payoneer, bank transfer, or JazzCash. International clients pay via Fiverr or Payoneer.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Do you work with international clients? <span>＋</span></button><div class="a">Yes. Everything happens online: files via Google Drive, chat via email or WhatsApp, and payments via Fiverr or Payoneer.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">How do I start a project with you? <span>＋</span></button><div class="a">Message me on WhatsApp, tell me your business and the service you need, see the free demo or sample, then confirm with the advance and we begin.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Are you a team or a single person? <span>＋</span></button><div class="a">BM Digital is a one-person business run by its founder, Bilal Mughal. You talk directly to the person doing your work.</div></div>
+    <div class="faq reveal"><button onclick="this.parentElement.classList.toggle('open')">Which areas do you serve? <span>＋</span></button><div class="a">Rawalpindi and Islamabad, including Wah Cantt and Taxila, and clients anywhere in Pakistan or abroad through online work.</div></div>
   </div></section>
 
 
 </div>
+
+
 
 <!-- ============ PRICING ============ -->
 <div id="page-pricing" class="page">
@@ -1026,7 +1040,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
     <div class="grid3">
       <div class="card reveal"><div class="ico">🌱</div><h3>Starter</h3><p style="color:var(--muted)">Pay per project. Perfect for trying me out.</p>
         <div class="price" style="font-size:1.6em;margin:12px 0">From $15</div>
-        <p>✓ 1 Reel / Short edit <b>or</b> 1 research task<br>✓ 1–2 revisions<br>✓ Delivery in days<br>✓ Email support<br>✓ No watermark, ever</p>
+        <p>✓ 1 Reel / Short edit<br>✓ 1–2 revisions<br>✓ Delivery in days<br>✓ Email support<br>✓ No watermark, ever</p>
         <p style="margin-top:18px"><button class="btn btn-g" onclick="go('contact')">Start a Project →</button></p></div>
       <div class="card reveal" style="border-color:rgba(245,185,66,.55);box-shadow:0 20px 60px rgba(245,185,66,.12)"><div class="ico">🚀</div><h3>Growth <span class="tag">Most Popular</span></h3><p style="color:var(--muted)">Monthly packs for creators &amp; businesses.</p>
         <div class="price" style="font-size:1.6em;margin:12px 0">From $100/mo</div>
@@ -1060,6 +1074,119 @@ font-size:.93em;font-weight:600;cursor:pointer}
   </div></section>
 </div>
 
+
+<!-- ============ SERVICE: WEBSITES ============ -->
+<div id="page-svc-websites" class="page">
+  <section class="blk"><div class="wrap">
+    <div class="sec-t"><h2>🌐 Website Development</h2><p>A modern, mobile-friendly website for your business — with a FREE 1-page demo before you pay anything.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>Simple — PKR 10,000</h3><p>1–3 pages, mobile-friendly, WhatsApp and call buttons, contact form.</p><div class="price">PKR 10,000</div></div>
+      <div class="card reveal"><h3>Business — PKR 18,000</h3><p>Up to 5 pages, services and gallery sections, Google Map location.</p><div class="price">PKR 18,000</div></div>
+      <div class="card reveal"><h3>Complete — PKR 30,000</h3><p>Up to 10 pages, full business website with all sections.</p><div class="price">PKR 30,000</div></div>
+    </div>
+    <p style="text-align:center;margin-top:12px;color:var(--muted)">50% advance before work starts, 50% on delivery. The domain is bought separately in your name after the advance.</p>
+  </div></section>
+  <section class="blk"><div class="wrap">
+    <div class="sec-t reveal"><h2>✅ What You Get</h2></div>
+    <div class="grid3">
+      <div class="card reveal"><div class="ico">📱</div><h3>Mobile-First Design</h3><p>Looks right on every phone — where most of your customers will see it first.</p></div>
+      <div class="card reveal"><div class="ico">💬</div><h3>WhatsApp &amp; Call Buttons</h3><p>Customers reach you in one tap, on every page.</p></div>
+      <div class="card reveal"><div class="ico">🔍</div><h3>Basic On-Page SEO</h3><p>Titles, descriptions, and structure included with every website.</p></div>
+      <div class="card reveal"><div class="ico">🗺️</div><h3>Map &amp; Contact Form</h3><p>Google Map location plus a working contact form.</p></div>
+      <div class="card reveal"><div class="ico">🚀</div><h3>Live Deployment</h3><p>You get a working link, plus the website files.</p></div>
+      <div class="card reveal"><div class="ico">⏱️</div><h3>3–7 Day Delivery</h3><p>Ready days after advance and content, not months.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:26px"><button class="btn btn-p" onclick="window.open('https://wa.me/923175493082?text=Assalam-o-Alaikum%2C%20mujhe%20apne%20business%20ke%20liye%20FREE%201-page%20website%20demo%20chahiye.','_blank')">Get My Free 1-Page Demo →</button></p>
+  </div></section>
+</div>
+
+<!-- ============ SERVICE: EDITING ============ -->
+<div id="page-svc-editing" class="page">
+  <section class="blk"><div class="wrap">
+    <div class="sec-t"><h2>🎬 Video Editing</h2><p>Reels, Shorts and TikToks edited to stop the scroll — with free sample edits for first-time brand collaborations.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>1 Reel — Rs. 2,000</h3><p>One scroll-stopping vertical edit, delivered in 2–3 days.</p><div class="price">Rs. 2,000</div></div>
+      <div class="card reveal"><h3>5 Reels — Rs. 8,000</h3><p>Save Rs. 2,000 on a pack of five edits.</p><div class="price">Rs. 8,000</div></div>
+      <div class="card reveal"><h3>Free Samples</h3><p>First-time brand collaborations get 1–2 free sample edits to judge the quality first.</p><div class="price">Free</div></div>
+    </div>
+  </div></section>
+  <section class="blk"><div class="wrap">
+    <div class="sec-t reveal"><h2>✅ What You Get</h2></div>
+    <div class="grid3">
+      <div class="card reveal"><div class="ico">✂️</div><h3>Clean Cuts &amp; Captions</h3><p>Hook-first openings, beat-synced cuts, kinetic captions, cinematic color grading.</p></div>
+      <div class="card reveal"><div class="ico">📱</div><h3>Vertical 9:16 Format</h3><p>Ready for Reels, Shorts and TikTok.</p></div>
+      <div class="card reveal"><div class="ico">🔁</div><h3>Revisions Included</h3><p>We refine until the edit feels right.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:26px"><button class="btn btn-p" onclick="window.open('https://wa.me/923175493082?text=Assalam-o-Alaikum%2C%20mujhe%20video%20editing%20ke%20baare%20me%20baat%20karni%20hai.','_blank')">Discuss My Videos on WhatsApp →</button></p>
+  </div></section>
+</div>
+
+<!-- ============ SERVICE: QR MENU ============ -->
+<div id="page-svc-qr" class="page">
+  <section class="blk"><div class="wrap">
+    <div class="sec-t"><h2>🍜 QR Digital Menus</h2><p>One scan, your full menu on the customer's phone — with photos, prices and instant updates.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>Pakistan — PKR 8,000</h3><p>One-time payment. Live menu page plus QR code image.</p><div class="price">PKR 8,000</div></div>
+      <div class="card reveal"><h3>International — $30</h3><p>One-time payment. Same live menu page and QR code.</p><div class="price">$30</div></div>
+      <div class="card reveal"><h3>No Monthly Fee</h3><p>The menu page itself has no monthly fee. Updates anytime, no reprinting.</p><div class="price">$0/mo</div></div>
+    </div>
+    <p style="text-align:center;margin-top:26px"><button class="btn btn-g" onclick="window.open('https://dastarkhwan-menu.pages.dev','_blank')">See the Dastarkhwan Demo Menu →</button></p>
+  </div></section>
+  <section class="blk"><div class="wrap">
+    <div class="sec-t reveal"><h2>📝 What I Need From You</h2></div>
+    <div class="grid3">
+      <div class="card reveal"><div class="ico">📋</div><h3>Your Menu</h3><p>A photo of the paper menu, or a list of dishes and prices.</p></div>
+      <div class="card reveal"><div class="ico">📸</div><h3>Food Photos</h3><p>Phone photos are fine — dishes sell with good photos.</p></div>
+      <div class="card reveal"><div class="ico">🏪</div><h3>Name, Logo &amp; Details</h3><p>Restaurant name and logo (if you have one), WhatsApp number, and address.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:26px"><button class="btn btn-p" onclick="go('contact')">Get My QR Menu →</button></p>
+  </div></section>
+</div>
+
+<!-- ============ SERVICE: BOTS ============ -->
+<div id="page-svc-bots" class="page">
+  <section class="blk"><div class="wrap">
+    <div class="sec-t"><h2>🤖 AI Chatbots</h2><p>A bot that answers your customers 24/7 — prices, timings, bookings and directions — and hands over to you on WhatsApp when a human is needed.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>Website Chatbot</h3><p>Answers visitors on your site, day and night.</p><div class="price">PKR 15,000</div></div>
+      <div class="card reveal"><h3>Instagram Bot</h3><p>Auto-replies in Instagram DMs, captures leads.</p><div class="price">PKR 20,000</div></div>
+      <div class="card reveal"><h3>WhatsApp Bot</h3><p>Auto-replies on WhatsApp, your customers' home ground.</p><div class="price">PKR 30,000</div></div>
+      <div class="card reveal"><h3>Website Voice Bot</h3><p>Visitors talk, the bot answers by voice.</p><div class="price">PKR 25,000</div></div>
+      <div class="card reveal"><h3>Maintenance</h3><p>Optional monthly updates and support.</p><div class="price">PKR 5,000/mo</div></div>
+    </div>
+  </div></section>
+  <section class="blk"><div class="wrap">
+    <div class="sec-t reveal"><h2>✅ How It Works</h2></div>
+    <div class="grid3">
+      <div class="card reveal"><div class="ico">🛠️</div><h3>Done-For-You Setup</h3><p>You only provide your business information — I build everything.</p></div>
+      <div class="card reveal"><div class="ico">🎯</div><h3>Real Answers Only</h3><p>Answers come from your real prices, timings and services — never guesses.</p></div>
+      <div class="card reveal"><div class="ico">🤝</div><h3>Human Handoff</h3><p>When a customer asks for a human, the bot hands over to you on WhatsApp.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:26px"><button class="btn btn-p" onclick="window.open('https://wa.me/923175493082?text=Assalam-o-Alaikum%2C%20mujhe%20AI%20chatbot%20ke%20baare%20me%20baat%20karni%20hai.','_blank')">Ask About a Bot on WhatsApp →</button></p>
+  </div></section>
+</div>
+
+<!-- ============ SERVICE: GBP ============ -->
+<div id="page-svc-gbp" class="page">
+  <section class="blk"><div class="wrap">
+    <div class="sec-t"><h2>📍 Google Business Profile Setup</h2><p>Get your business found on Google Search and Maps, with reviews that build trust before a customer ever calls you.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>Profile Setup</h3><p>Complete profile: name, category, service areas, phone, website, hours, services, photos.</p><div class="price">PKR 5,000</div></div>
+      <div class="card reveal"><h3>Website + Profile Bundle</h3><p>A new website plus a complete Google profile, launched together.</p><div class="price">PKR 25,000</div></div>
+      <div class="card reveal"><h3>Monthly Management</h3><p>Posts, review replies, and detail updates every month.</p><div class="price">PKR 2,000/mo</div></div>
+    </div>
+  </div></section>
+  <section class="blk"><div class="wrap">
+    <div class="sec-t reveal"><h2>✅ What You Get</h2></div>
+    <div class="grid3">
+      <div class="card reveal"><div class="ico">🔑</div><h3>Ownership Stays With You</h3><p>Your profile, your account — you are always in control.</p></div>
+      <div class="card reveal"><div class="ico">⭐</div><h3>Review Guidance</h3><p>Guidance on getting your first genuine customer reviews.</p></div>
+      <div class="card reveal"><div class="ico">✔️</div><h3>Verification Guidance</h3><p>Video or postcard verification — whichever Google offers.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:26px"><button class="btn btn-p" onclick="window.open('https://wa.me/923175493082?text=Assalam-o-Alaikum%2C%20mujhe%20Google%20Business%20Profile%20setup%20ke%20baare%20me%20baat%20karni%20hai.','_blank')">Set Up My Google Profile →</button></p>
+  </div></section>
+</div>
+
 <!-- ============ PRIVACY ============ -->
 <div id="page-privacy" class="page"><section class="blk"><div class="wrap policy">
   <div class="sec-t"><h2>🔒 Privacy Policy</h2><p>Last updated: October 2026 · BM Digital (Bilal Mughal)</p></div>
@@ -1068,7 +1195,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
 
   <h2>1. Information I Collect</h2>
   <p><b style="color:var(--txt)">a) Contact information.</b> When you fill in the contact form, email me, or message me on Instagram/Fiverr, I receive your name, email address, and any project details you choose to share.</p>
-  <p><b style="color:var(--txt)">b) Project files.</b> For video projects, you may share footage, logos, brand assets, or scripts. For websites, business details like addresses, phone numbers, and opening hours. For Amazon VA work, product and account-related information needed to do the job.</p>
+  <p><b style="color:var(--txt)">b) Project files.</b> For video projects, you may share footage, logos, brand assets, or scripts. For websites, business details like addresses, phone numbers, and opening hours. For AI chatbot work, your business info, FAQs, and menu or services list needed to train the bot.</p>
   <p><b style="color:var(--txt)">c) Communications.</b> Our messages, revision notes, and feedback — kept so I can deliver your project accurately and keep a record of what was agreed.</p>
   <p><b style="color:var(--txt)">d) Technical data.</b> Like any website, basic technical information is exchanged automatically: your browser type, pages visited, and approximate location (country/city level). If this site is hosted on a platform such as Netlify, that host may keep standard server logs.</p>
   <p><b style="color:var(--txt)">What I don't collect:</b> I don't run advertising trackers, I don't use fingerprinting, and I don't build profiles about visitors.</p>
@@ -1076,7 +1203,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
   <h2>2. How I Use Your Information</h2>
   <ul>
     <li>To reply to your inquiries and provide quotes.</li>
-    <li>To deliver your project: editing your videos, building your website, managing your Amazon tasks.</li>
+    <li>To deliver your project: editing your videos, building your website, managing your AI chatbot tasks.</li>
     <li>To send project updates, revision drafts, and delivery links.</li>
     <li>To improve my services based on aggregated, anonymous feedback.</li>
     <li>To comply with legal obligations (for example, tax records for payments received).</li>
@@ -1150,7 +1277,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
   <div class="reveal">
   <p>These terms keep projects smooth and fair for both sides. By ordering a service, you agree to the following — in plain language, no legalese ambushes.</p>
   <h2>1. Services</h2>
-  <p>BM Digital (Bilal Mughal, operating from Pakistan) provides five services: <b style="color:var(--txt)">video editing</b> (Reels, Shorts, TikToks, AI films, cinematic edits), <b style="color:var(--txt)">website development</b> (custom-coded business websites and landing pages), <b style="color:var(--txt)">AI chatbots</b> (WhatsApp &amp; Instagram auto-reply assistants), <b style="color:var(--txt)">QR digital menus</b> (scan-to-view restaurant menus), and <b style="color:var(--txt)">Amazon virtual assistance</b> (product research, sourcing support, Seller Central management). Service details, tiers, and prices are listed on the Market and Pricing pages.</p>
+  <p>BM Digital (Bilal Mughal, operating from Pakistan) provides five services: <b style="color:var(--txt)">video editing</b> (Reels, Shorts, TikToks, AI films, cinematic edits), <b style="color:var(--txt)">website development</b> (custom-coded business websites and landing pages), <b style="color:var(--txt)">AI chatbots</b> (WhatsApp &amp; Instagram auto-reply assistants), <b style="color:var(--txt)">QR digital menus</b> (scan-to-view restaurant menus), and <b style="color:var(--txt)">Google Business Profile setup</b> (profile creation, verification guidance, and management). Service details, tiers, and prices are listed on the Market and Pricing pages.</p>
   <h2>2. Ordering &amp; Payment</h2>
   <ul>
     <li><b style="color:var(--txt)">Quotes:</b> every project gets one clear quoted price and timeline before work starts. The quote is valid for 14 days.</li>
@@ -1190,7 +1317,7 @@ font-size:.93em;font-weight:600;cursor:pointer}
 <footer><div class="wrap">
   <div class="foot-grid">
     <div><div class="logo" onclick="go('home')">BM <span>DIGITAL</span></div>
-      <p style="color:var(--muted);font-size:.9em;margin:10px 0">Websites, AI chatbots, QR menus, video editing &amp; Amazon VA — one partner for your entire online presence.</p>
+      <p style="color:var(--muted);font-size:.9em;margin:10px 0">Websites, AI chatbots, QR menus, video editing &amp; Google profiles — one partner for your entire online presence.</p>
       <h4>Connect</h4>
       <div class="socials">
         <a href="https://instagram.com/bm_editor1" target="_blank" rel="noopener" title="Instagram">📸</a>
@@ -1202,11 +1329,11 @@ font-size:.93em;font-weight:600;cursor:pointer}
       </div></div>
     <div><h4>Services</h4>
       <button onclick="openPage('work')">Video Editing</button><button onclick="openPage('websites')">Websites</button>
-      <button onclick="openPage('market')">Amazon VA</button><button onclick="openPage('chatbot')">AI Chatbot</button>
+      <button onclick="openPage('svc-gbp')">Google Profile</button><button onclick="openPage('chatbot')">AI Chatbot</button>
       <button onclick="openPage('contact')">QR Menus</button><button onclick="openPage('pricing')">Pricing</button></div>
     <div><h4>BM Digital for</h4>
       <button onclick="openPage('work')">Creators</button><button onclick="openPage('websites')">Small Businesses</button>
-      <button onclick="openPage('contact')">Coaches</button><button onclick="openPage('market')">Amazon Sellers</button>
+      <button onclick="openPage('contact')">Coaches</button><button onclick="openPage('svc-qr')">Restaurants</button>
       <button onclick="openPage('academy')">Educators</button></div>
     <div><h4>Resources</h4>
       <button onclick="openPage('academy')">Academy</button><button onclick="openPage('faqs')">FAQs</button>
@@ -1226,14 +1353,14 @@ font-size:.93em;font-weight:600;cursor:pointer}
 </div></footer>
 
 <script>
-var navMap={home:'home',work:'work',showcase:'work',collections:'work',elements:'work',chatbot:'chatbot',about:'about',contact:'about',jobs:'about',conferences:'about',academy:'learn',faqs:'learn',directory:'learn',websites:'services',market:'services',pricing:'pricing'};
+var navMap={home:'home',work:'work',showcase:'work',collections:'work',elements:'work',chatbot:'chatbot',about:'about',contact:'about',jobs:'about',conferences:'about',academy:'learn',faqs:'learn',directory:'learn',websites:'services',market:'services',pricing:'pricing','svc-websites':'services','svc-editing':'services','svc-qr':'services','svc-bots':'services','svc-gbp':'services'};
 function go(id){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')});
 var el=document.getElementById('page-'+id);if(el)el.classList.add('on');
 document.querySelectorAll('[data-nav]').forEach(function(b){b.classList.remove('on')});
 var n=navMap[id];if(n){var b=document.querySelector('[data-nav="'+n+'"]');if(b)b.classList.add('on');}
 window.scrollTo({top:0,behavior:'smooth'});initReveal();}
 /* typing */
-var words=['stunning websites.','viral Reels & Shorts.','Amazon businesses.','AI-powered videos.'],wi=0,ci=0,del=false;
+var words=['stunning websites.','viral Reels & Shorts.','QR digital menus.','AI-powered videos.'],wi=0,ci=0,del=false;
 function type(){var el=document.getElementById('typeText');if(!el)return;var w=words[wi];
 el.textContent=w.slice(0,ci);ci+=del?-1:1;
 if(!del&&ci>w.length){del=true;setTimeout(type,1500);return;}
@@ -1264,12 +1391,12 @@ addMsg(t,'me');inp.value='';setTimeout(function(){addMsg(botReply(t),'bot');},45
 function askChip(t){var inp=document.getElementById('chatIn');inp.value=t;var box=document.getElementById('chatMsgs');
 if(box)box.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){sendChat();},350);}
 function botReply(q){q=q.toLowerCase();
-if(/price|cost|much|charge|rate/.test(q))return "Websites from $80, video editing from $15, Amazon VA from $20. See the Pricing page for plans — or tell me which service you need!";
+if(/price|cost|much|charge|rate/.test(q))return "Websites from $80, video editing from $15, AI chatbots from PKR 15,000. See the Pricing page for plans — or tell me which service you need!";
 if(/website|site|landing|web/.test(q))return "I build modern animated websites — landing pages to full multi-page sites with forms, maps & animations. From $80, delivered live. Want one? Hit 'Let's Talk'!";
 if(/video|edit|reel|short|tiktok|film/.test(q))return "I edit scroll-stopping Reels, Shorts & TikToks — from $15. Send your footage and I'll handle the rest!";
-if(/amazon|va|product|seller|sourc/.test(q))return "As your Amazon VA I do product research, sourcing support & full Seller Central management — from $20. Ask me for a free sample report outline!";
+if(/bot|chatbot|whatsapp|instagram|qr|menu/.test(q))return "I build AI chatbots for WhatsApp & Instagram that answer your customers 24/7 — from PKR 15,000 — plus QR digital menus from PKR 8,000. Want a demo? Hit 'Let's Talk'!";
 if(/order|hire|start|contact|email|book/.test(q))return "Easy! Go to the Contact page and fill the form, or email armanzaheer808@gmail.com — I reply within 24 hours. You can also order on Fiverr (search BM Digital).";
-if(/who|about|bilal|yourself|founder/.test(q))return "I'm Bilal Mughal — video editor, website builder & Amazon VA from Pakistan. Check the About page for the full story!";
+if(/who|about|bilal|yourself|founder/.test(q))return "I'm Bilal Mughal — video editor, website builder & AI chatbot developer from Pakistan. Check the About page for the full story!";
 if(/discount|student|nonprofit|non-profit/.test(q))return "Yes! Students and non-profits get special discounts. Mention it when you contact me and we'll work something out.";
 if(/hi|hello|salam|hey/.test(q))return "Hello! Great to see you. Ask me about services, pricing, or how to order — I know this business inside out!";
 if(/thank|shukriya/.test(q))return "You're welcome! Anything else I can help with?";
@@ -1280,5 +1407,6 @@ var s='New project inquiry — '+document.getElementById('cf-service').value;
 var b='Name: '+document.getElementById('cf-name').value+'%0D%0AEmail: '+document.getElementById('cf-email').value+'%0D%0A%0D%0A'+encodeURIComponent(document.getElementById('cf-msg').value);
 window.location.href='mailto:armanzaheer808@gmail.com?subject='+encodeURIComponent(s)+'&body='+b;return false;}
 </script>
+<a href="https://wa.me/923175493082?text=Assalam-o-Alaikum%2C%20mujhe%20apne%20business%20ke%20liye%20website%20ke%20baare%20me%20baat%20karni%20hai." target="_blank" rel="noopener" aria-label="WhatsApp par baat karo" style="position:fixed;right:20px;bottom:20px;z-index:9999;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 18px;border-radius:999px;text-decoration:none;font-size:15px;font-weight:600;box-shadow:0 4px 16px rgba(0,0,0,.35);"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp par baat karo</a>
 </body>
 </html>
