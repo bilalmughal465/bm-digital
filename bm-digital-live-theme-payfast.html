@@ -1,0 +1,1473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="BM Digital — Bilal Mughal. Websites, AI chatbots, QR menus and video editing in Rawalpindi, Pakistan. Websites from PKR 10,000 with a free 1-page demo.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='24' font-weight='700' fill='%23fff' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
+<title>BM Digital — Bilal Mughal | Websites, AI Chatbots, QR Menus & Video Editing in Rawalpindi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000000; --bg2:#060606; --panel:rgba(255,255,255,.04);
+  --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09);
+  --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.16);
+  --text:#ffffff; --muted:#a3a3a3; --muted2:#737373;
+  --white:#ffffff; --black:#000000;
+  --radius:20px;
+  --green:#173f2e; --green2:#2e6b4f; --mint:#9fd8b4;
+  --tan:#e9e1cf; --tan2:#d8c9a8; --ink:#111613;
+  --font:'Inter',-apple-system,'Segoe UI',sans-serif;
+  --display:'Bricolage Grotesque','Inter',-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:#fff;color:#000}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+
+/* ---------- 3D background (Scale-style scroll scene) ---------- */
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
+.bg-shade{position:fixed;inset:0;z-index:1;pointer-events:none;background:
+  radial-gradient(900px 520px at 85% -5%,rgba(255,255,255,.07),transparent 60%),
+  radial-gradient(700px 500px at -10% 40%,rgba(255,255,255,.045),transparent 60%),
+  linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.55) 55%,rgba(0,0,0,.88))}
+.progress{position:fixed;top:0;left:0;height:2px;background:#fff;width:0;z-index:200}
+main,footer,header.site{position:relative;z-index:2}
+
+/* ---------- Glass ---------- */
+.glass{background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 24px 60px rgba(0,0,0,.45)}
+.glass-strong{background:rgba(12,12,12,.72);border:1px solid var(--line);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%)}
+
+/* ---------- Header (Scale-style: slim, black, white wordmark) ---------- */
+header.site{position:fixed;top:0;left:0;right:0;z-index:100}
+.navwrap{max-width:1280px;margin:0 auto;padding:14px 20px}
+nav.glass-strong{border-radius:16px;display:flex;align-items:center;gap:18px;padding:10px 12px 10px 20px}
+.wordmark{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
+.wordmark span{color:var(--muted);font-weight:500}
+.navlinks{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.navlinks button{background:none;border:0;color:var(--muted);font-size:14px;font-weight:500;padding:8px 12px;border-radius:999px;transition:.2s}
+.navlinks button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.navlinks button.active{color:#000;background:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500;font-size:15px;padding:12px 22px;border-radius:999px;border:1px solid transparent;transition:.2s;white-space:nowrap}
+.btn-white{background:#fff;color:#000}
+.btn-white:hover{background:#e5e5e5;transform:translateY(-1px)}
+.btn-ghost{background:rgba(255,255,255,.05);color:#fff;border-color:var(--line2);backdrop-filter:blur(12px)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-sm{padding:9px 18px;font-size:14px}
+.burger{display:none;margin-left:auto;background:rgba(255,255,255,.06);border:1px solid var(--line);color:#fff;border-radius:10px;width:42px;height:42px;font-size:20px;line-height:1}
+.mobmenu{display:none;margin-top:8px;border-radius:16px;padding:10px}
+.mobmenu.open{display:block}
+.mobmenu button{display:block;width:100%;text-align:left;background:none;border:0;color:#e5e5e5;font-size:16px;font-weight:500;padding:12px 14px;border-radius:10px}
+.mobmenu button:hover,.mobmenu button.active{background:rgba(255,255,255,.08);color:#fff}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+.page{display:none}
+.page.active{display:block;animation:pageIn .5s ease both}
+@keyframes pageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+section.blk{padding:96px 0 8px}
+.kicker{font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:26px;height:1px;background:var(--line2)}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.035em;line-height:1.04;font-weight:700}
+h2.sec{font-size:clamp(34px,5.2vw,58px);margin:16px 0 14px;max-width:820px}
+.lede{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:640px}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Hero (Scale-style: huge type, left aligned, bordered stats) ---------- */
+.hero{padding:168px 0 70px;perspective:1200px}
+.hero h1{font-size:clamp(44px,8.4vw,104px);font-weight:800;max-width:1000px}
+.hero h1 .thin{color:var(--muted);font-weight:600}
+.hero .sub{margin-top:26px;color:var(--muted);font-size:clamp(17px,2.4vw,21px);max-width:620px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+/* Professional hero media — controlled size, 16/9 crop, rounded, scroll-coupled layers (own images, presented like a showreel) */
+.hero-card{margin:48px auto 0;max-width:980px;border-radius:28px;overflow:hidden;will-change:transform}
+.hero-media{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0a0f0c}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transform:scale(1.06)}
+.hero-media img.on{opacity:1}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));pointer-events:none}
+.hero-badge{position:absolute;top:16px;left:16px;z-index:3;background:rgba(10,15,12,.72);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:7px 13px;border-radius:999px}
+.hero-dots{position:absolute;bottom:16px;right:16px;z-index:3;display:flex;gap:7px}
+.hero-dots i{width:22px;height:5px;border-radius:99px;background:rgba(255,255,255,.35)}
+.hero-dots i.on{background:#fff}
+.hero-card .cap{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:15px 20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.chip{border:1px solid var(--line2);border-radius:999px;padding:5px 13px;font-size:13px;color:#e5e5e5;background:rgba(255,255,255,.04)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:22px}
+.stats div{padding:22px;border-right:1px solid var(--line);background:rgba(255,255,255,.02)}
+.stats div:last-child{border-right:0}
+.stats b{font-family:var(--display);font-size:clamp(22px,3vw,32px);display:block;letter-spacing:-.03em}
+.stats span{color:var(--muted);font-size:13.5px}
+
+/* marquee — Scale-style scrolling strip */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;margin-top:70px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq-track{display:flex;gap:56px;width:max-content;will-change:transform}
+.mq-track span{font-family:var(--display);font-weight:500;font-size:19px;color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:56px}
+.mq-track i{font-style:normal;color:#404040}
+
+/* ---------- Cards & grids ---------- */
+.grid{display:grid;gap:16px;margin-top:42px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g5{grid-template-columns:repeat(6,1fr)}
+.card{border-radius:var(--radius);padding:28px;transition:transform .35s cubic-bezier(.2,.7,.2,1),background .3s;will-change:transform}
+.card:hover{background:var(--glass2)}
+.card .ic{width:46px;height:46px;border-radius:13px;border:1px solid var(--line2);background:rgba(255,255,255,.06);display:grid;place-items:center;margin-bottom:18px}
+.card .ic svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:21px;margin-bottom:9px}
+.card p{color:var(--muted);font-size:15px}
+.card .price{margin-top:16px;font-family:var(--display);font-weight:600;font-size:17px}
+.card .price small{display:block;color:var(--muted);font-family:var(--font);font-weight:500;font-size:13px;margin-top:2px}
+.card .go{margin-top:14px;display:inline-block;font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid #fff;padding-bottom:2px}
+.span2{grid-column:span 2}.span3{grid-column:span 3}.span6{grid-column:span 6}
+.imgcard{padding:0;overflow:hidden}
+.imgcard img{width:100%;height:230px;object-fit:cover}
+.imgcard .in{padding:24px 26px 28px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:42px}
+.step{border-radius:var(--radius);padding:28px}
+.step .num{font-family:var(--display);font-size:15px;font-weight:600;border:1px solid var(--line2);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;margin-bottom:52px;background:rgba(255,255,255,.05)}
+.step h3{font-size:20px;margin-bottom:8px}.step p{color:var(--muted);font-size:15px}
+
+/* pricing */
+.ptable{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:42px;background:rgba(255,255,255,.02);backdrop-filter:blur(14px)}
+.ptable table{width:100%;border-collapse:collapse;font-size:15px}
+.ptable th,.ptable td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line)}
+.ptable th{font-family:var(--display);font-size:17px;background:rgba(255,255,255,.04)}
+.ptable td{color:var(--muted)} .ptable td:first-child{color:#fff;font-weight:500}
+.ptable tr:last-child td{border-bottom:0}
+.plan{border-radius:var(--radius);padding:30px;position:relative}
+.plan.hot{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.28)}
+.tag{position:absolute;top:18px;right:18px;background:#fff;color:#000;font-size:12px;font-weight:600;padding:4px 11px;border-radius:999px}
+.plan .amt{font-family:var(--display);font-size:34px;font-weight:800;letter-spacing:-.03em;margin:10px 0 4px}
+.plan ul{list-style:none;margin:18px 0 24px}
+.plan li{padding:7px 0;color:var(--muted);font-size:15px;border-bottom:1px dashed rgba(255,255,255,.08)}
+.plan li::before{content:"✓";color:#fff;font-weight:600;margin-right:10px}
+.plan li:last-child{border-bottom:0}
+
+/* faq */
+.faq{margin-top:36px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:rgba(255,255,255,.02);backdrop-filter:blur(14px)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:last-child{border-bottom:0}
+.faq summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:500;font-size:16.5px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;color:var(--muted);font-weight:400}
+.faq details[open ] summary::after{content:"–"}
+.faq .a{padding:0 24px 22px;color:var(--muted);font-size:15.5px;max-width:860px}
+
+/* timeline */
+.tl{margin-top:42px;border-left:1px solid var(--line2);padding-left:28px;display:grid;gap:30px}
+.tl div{position:relative}
+.tl div::before{content:"";position:absolute;left:-34px;top:7px;width:11px;height:11px;border-radius:50%;background:#fff;box-shadow:0 0 0 5px rgba(255,255,255,.10)}
+.tl h3{font-size:19px;margin-bottom:5px}.tl p{color:var(--muted);font-size:15px;max-width:640px}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+
+/* form */
+.form{display:grid;gap:14px;margin-top:8px}
+.form label{font-size:14px;font-weight:500}
+.form input,.form select,.form textarea{width:100%;margin-top:6px;background:rgba(255,255,255,.05);border:1px solid var(--line2);border-radius:12px;color:#fff;padding:13px 15px;font-size:15px;font-family:inherit;outline:none}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:#fff}
+.form select option{color:#000}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:42px;align-items:start}
+.kv{padding:20px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border-bottom:0}
+.kv b{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;font-weight:500}
+.kv a{font-size:18px;font-weight:500;text-decoration:none}
+.kv a:hover{text-decoration:underline}
+
+/* ===== Scale-style scroll story (all scroll-coupled, no timed animation) ===== */
+.round-shell{border-radius:34px;margin:26px auto;max-width:1240px;padding:0}
+.light-sec{background:var(--tan);color:var(--ink)}
+.light-sec .kicker{color:#5c665f}.light-sec .kicker::before{background:#9a917c}
+.light-sec .lede{color:#4d574f}
+.green-sec{background:linear-gradient(160deg,#1b4a35,#10291d);color:#f3efe4}
+.green-sec .kicker{color:var(--tan2)}
+.filltext{background:linear-gradient(90deg,currentColor 0 var(--p,0%),rgba(128,128,128,.28) var(--p,0%));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.light-sec .filltext{background:linear-gradient(90deg,var(--green) 0 var(--p,0%),rgba(23,63,46,.18) var(--p,0%));-webkit-background-clip:text;background-clip:text}
+/* Pinned 3D panels */
+.pin-wrap{height:260vh;position:relative}
+.pin-sticky{position:sticky;top:0;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:110px 0 30px}
+.pin-stage{perspective:1300px;display:flex;justify-content:center;align-items:center;gap:0;margin-top:36px;min-height:340px}
+.panel3d{width:min(300px,72vw);border-radius:26px;overflow:hidden;flex:none;margin:0 -26px;background:#0d1511;border:1px solid rgba(255,255,255,.18);box-shadow:0 30px 70px rgba(0,0,0,.5);will-change:transform,opacity}
+.panel3d img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center}
+.panel3d .pt{padding:16px 18px 19px}
+.panel3d .pt b{font-family:var(--display);font-size:17px;display:block}
+.panel3d .pt p{color:#b9c4bc;font-size:13.5px;margin-top:3px}
+.pin-flip{margin-top:30px;text-align:center;font-family:var(--display);font-weight:700;font-size:clamp(20px,3.4vw,32px);letter-spacing:-.02em;will-change:transform,opacity}
+.pin-flip small{display:block;font-family:var(--font);font-weight:500;font-size:14px;color:var(--muted);margin-top:6px;letter-spacing:0}
+/* Word-by-word headline */
+.word-sec{padding:110px 0}
+.wordline{font-size:clamp(36px,6vw,72px);max-width:980px}
+.wordline .w{opacity:.16;transition:none}
+.wordline .w.on{opacity:1}
+/* Orbit + changing last word */
+.orbit-sec{padding:110px 0;overflow:hidden}
+.orbit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+.swapword{color:var(--tan2);border-bottom:4px solid var(--tan2);white-space:nowrap}
+.orbit{position:relative;width:min(360px,82vw);aspect-ratio:1;margin:0 auto}
+.orbit-ring{position:absolute;inset:0;border:1.5px dashed rgba(233,225,207,.4);border-radius:50%}
+.orbit-rot{position:absolute;inset:0;will-change:transform}
+.orbit-item{position:absolute;width:86px;height:86px;margin:-43px 0 0 -43px;border-radius:50%;overflow:hidden;border:3px solid var(--tan);box-shadow:0 16px 34px rgba(0,0,0,.35);background:#0d1511}
+.orbit-item img{width:100%;height:100%;object-fit:cover}
+.orbit-item.txt{display:grid;place-items:center;color:var(--tan);font-family:var(--display);font-weight:700;font-size:14px;text-align:center;padding:6px}
+.orbit-core{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:118px;height:118px;border-radius:50%;background:var(--tan);color:var(--green);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:700;font-size:16px;line-height:1.15;padding:12px}
+/* Scroll-driven cards marquee */
+.cards-mq{overflow:hidden;padding:56px 0 66px;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.cards-track{display:flex;gap:16px;width:max-content;will-change:transform;padding:0 20px}
+.ccard{background:#fffdf6;border:1px solid #ddd2ba;border-radius:24px;padding:24px;width:300px;flex:none;color:var(--ink);box-shadow:0 14px 34px rgba(60,50,20,.08)}
+.ccard b{font-family:var(--display);font-size:19px;display:block;margin-bottom:7px}
+.ccard p{color:#55604f;font-size:14.5px}
+.ccard .tg{display:inline-block;margin-top:14px;background:var(--green);color:#fff;font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;letter-spacing:.05em;text-transform:uppercase}
+/* Professional duo showcase — replaces the warped floating phone */
+.showcase{padding:90px 0 10px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.duo figure{border-radius:26px;overflow:hidden}
+.duo img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center}
+.duo figcaption{padding:18px 22px 21px;border-top:1px solid var(--line)}
+.duo figcaption b{font-family:var(--display);font-size:18px;display:block}
+.duo figcaption p{color:var(--muted);font-size:14.5px;margin-top:4px}
+.duo .tagimg{display:inline-block;background:rgba(255,255,255,.1);border:1px solid var(--line2);border-radius:999px;padding:4px 11px;font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px}
+
+/* ---------- Restored background & demo videos (original relative paths — files live beside index.html on the live site) ---------- */
+.hero{isolation:isolate;position:relative;overflow:hidden}
+.hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.55;z-index:0;pointer-events:none;background:#060806}
+.hero-bg-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.38),rgba(0,0,0,.16) 42%,rgba(0,0,0,.68)),radial-gradient(760px 420px at 18% 8%,rgba(0,0,0,.22),transparent 65%)}
+.hero>*:not(.hero-bg-video):not(.hero-bg-shade){position:relative;z-index:2}
+.vidgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:42px}
+.vidcard{padding:0;overflow:hidden}
+.vidcard video{width:100%;aspect-ratio:9/16;object-fit:cover;object-position:center;display:block;background:#0a0f0c}
+.vidcard .in{padding:18px 18px 21px}
+.vidcard h3{font-size:16.5px;margin-bottom:6px}
+.vidcard p{color:var(--muted);font-size:14px}
+.vidcard .vtag{display:inline-block;background:rgba(255,255,255,.09);border:1px solid var(--line2);border-radius:999px;padding:3px 10px;font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;color:#e5e5e5}
+.workvid{width:100%;aspect-ratio:9/16;object-fit:cover;object-position:center;display:block;background:#000;border-bottom:1px solid var(--line)}
+@media(max-width:1020px){.vidgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.vidgrid{grid-template-columns:repeat(2,1fr)}.hero-bg-video{opacity:.48}}
+
+/* footer */
+footer{margin-top:110px;border-top:1px solid var(--line);background:rgba(255,255,255,.015)}
+.foot{max-width:1280px;margin:0 auto;padding:56px 20px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px}
+.foot h4{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:500}
+.foot a{display:block;color:#d4d4d4;text-decoration:none;font-size:15px;padding:4px 0;background:none;border:0;text-align:left;cursor:pointer;font-family:inherit}
+.foot a:hover,.foot button.lnk:hover{color:#fff;text-decoration:underline}
+.foot button.lnk{display:block;color:#d4d4d4;font-size:15px;padding:4px 0;background:none;border:0;cursor:pointer;font-family:inherit}
+.foot p{color:var(--muted);font-size:14.5px;max-width:300px}
+.foot-base{max-width:1280px;margin:0 auto;padding:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:var(--muted2);font-size:13.5px}
+
+/* whatsapp float */
+.wa{position:fixed;right:18px;bottom:18px;z-index:120;width:58px;height:58px;border-radius:50%;background:#22c55e;display:grid;place-items:center;box-shadow:0 14px 34px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.25);transition:.2s}
+.wa:hover{transform:scale(1.06)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+/* bot demo */
+.botbox{border-radius:var(--radius);padding:26px;margin-top:42px}
+.msg{max-width:82%;padding:12px 16px;border-radius:16px;font-size:15px;margin-bottom:10px}
+.msg.bot{background:rgba(255,255,255,.09);border:1px solid var(--line)}
+.msg.me{background:#fff;color:#000;margin-left:auto}
+.botrow{display:flex;gap:10px;margin-top:14px}
+.botrow input{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--line2);border-radius:999px;color:#fff;padding:12px 18px;font-size:15px;font-family:inherit;outline:none;min-width:0}
+.botrow input:focus{border-color:#fff}
+.quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.quick button{background:rgba(255,255,255,.05);border:1px solid var(--line2);color:#e5e5e5;border-radius:999px;padding:7px 14px;font-size:13.5px}
+.quick button:hover{background:rgba(255,255,255,.13);color:#fff}
+
+.legal p,.legal li{color:var(--muted);font-size:15.5px}
+.legal h3{font-size:20px;margin:30px 0 8px}
+.legal ul{padding-left:20px}
+
+@media(max-width:1020px){
+  .g5{grid-template-columns:repeat(2,1fr)} .span3,.span2{grid-column:span 1} .span6{grid-column:span 2}
+  .g3{grid-template-columns:repeat(2,1fr)} .steps{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  .orbit-grid{grid-template-columns:1fr}
+  .duo{grid-template-columns:1fr}
+  .panel3d{margin:0 -58px}
+  .pin-stage{min-height:300px}
+}
+@media(max-width:760px){
+  .navlinks{display:none}.burger{display:block}
+  .navcta{display:none}
+  .wordmark span{display:none}
+  .wordmark{font-size:18px}
+  nav.glass-strong{padding:8px 8px 8px 14px;gap:8px}
+  .navwrap{padding:10px 12px}
+  .hero{padding:138px 0 50px}
+  section.blk{padding:70px 0 4px}
+  .g2,.g3,.g5,.steps,.contact-grid{grid-template-columns:1fr}
+  .span6{grid-column:span 1}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats div{border-bottom:1px solid var(--line)}
+  .foot{grid-template-columns:1fr}
+  .ptable{overflow-x:auto}
+  .ptable table{min-width:560px}
+  .hero-media{aspect-ratio:4/3}
+  .round-shell{border-radius:24px;margin:16px 12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{transition:none;opacity:1;transform:none}.page.active{animation:none}
+  .pin-wrap{height:auto}.pin-sticky{position:static;min-height:0}
+  .wordline .w{opacity:1}
+}
+</style>
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="bg-shade" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="site">
+  <div class="navwrap">
+    <nav class="glass-strong" aria-label="Main">
+      <a class="wordmark" href="#home" data-go="home">BM Digital <span>· Bilal Mughal</span></a>
+      <div class="navlinks" id="navlinks">
+        <button data-go="home" class="active">Home</button>
+        <button data-go="services">Services</button>
+        <button data-go="work">Work</button>
+        <button data-go="about">About</button>
+        <button data-go="pricing">Pricing</button>
+        <button data-go="faqs">FAQs</button>
+        <button data-go="contact">Contact</button>
+      </div>
+      <a class="btn btn-white btn-sm navcta" style="margin-left:8px" href="https://wa.me/923175493082?text=Hi%20Bilal%2C%20I%20want%20a%20free%201-page%20website%20demo." target="_blank" rel="noopener">Free Demo</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </nav>
+    <div class="mobmenu glass-strong" id="mobmenu">
+      <button data-go="home" class="active">Home</button>
+      <button data-go="services">Services</button>
+      <button data-go="work">Work</button>
+      <button data-go="about">About</button>
+      <button data-go="pricing">Pricing</button>
+      <button data-go="faqs">FAQs</button>
+      <button data-go="contact">Contact</button>
+      <button data-go="privacy">Privacy &amp; Terms</button>
+      <a href="https://wa.me/923175493082?text=Hi%20Bilal%2C%20I%20want%20a%20free%201-page%20website%20demo." target="_blank" rel="noopener" style="display:block;color:#000;background:#fff;font-weight:600;font-size:16px;padding:12px 14px;border-radius:10px;text-decoration:none;margin-top:6px;text-align:center">Get a Free Demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============================= HOME ============================= -->
+<div class="page active" id="page-home">
+  <div class="wrap">
+    <div class="hero">
+      <video class="hero-bg-video" id="heroBgVideo" autoplay muted loop playsinline preload="auto" disablepictureinpicture disableremoteplayback tabindex="-1" poster="assets/editing.jpg" aria-hidden="true"><source src="./hero-bg.mp4" type="video/mp4"></video>
+      <div class="hero-bg-shade" aria-hidden="true"></div>
+      <p class="kicker">Rawalpindi · Islamabad · Clients Worldwide</p>
+      <h1>Websites, videos &amp; AI bots that <span class="thin">grow your business.</span></h1>
+      <p class="sub">I'm Bilal Mughal — the one-person studio behind BM Digital. I build modern websites, edit scroll-stopping Reels &amp; Shorts, and set up AI chatbots and QR menus that answer your customers 24/7.</p>
+      <div class="hero-cta">
+        <a class="btn btn-white" href="https://wa.me/923175493082?text=Hi%20Bilal%2C%20I%20want%20a%20free%201-page%20website%20demo." target="_blank" rel="noopener">Get a Free 1-Page Demo</a>
+        <button class="btn btn-ghost" data-go="pricing">See Pricing</button>
+      </div>
+      <div class="hero-card glass" id="heroCard">
+        <div class="hero-media" id="heroMedia">
+          <img class="on" src="assets/editing.jpg" alt="Clean premium desk with a single ultrawide monitor showing a full-screen scenic image">
+          <img src="assets/qr-menu.jpg" alt="Customer viewing a QR digital menu on a phone at a restaurant table">
+          <img src="assets/chatbot.jpg" alt="Phone showing an AI chatbot answering a customer on WhatsApp">
+          <span class="hero-badge" id="heroBadge">Showreel · Editing</span>
+          <span class="hero-dots" id="heroDots"><i class="on"></i><i></i><i></i></span>
+        </div>
+        <div class="cap"><span>Scroll to play through the work — editing, menus &amp; bots, from one desk.</span><span><span class="chip">Websites from PKR 10,000</span> <span class="chip">Reply within 24 hours</span></span></div>
+      </div>
+      <div class="stats glass">
+        <div><b>5</b><span>Services offered</span></div>
+        <div><b>24 hrs</b><span>Response time</span></div>
+        <div><b>Free</b><span>1-page website demo first</span></div>
+        <div><b>50%</b><span>Advance — the rule that protects us both</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true"><div class="mq-track" id="mq">
+    <span>Modern Websites <i>◆</i> Video Editing <i>◆</i> AI Chatbots <i>◆</i> QR Digital Menus <i>◆</i> Google Business Profile <i>◆</i> Reels · Shorts · TikToks <i>◆</i></span>
+    <span>Modern Websites <i>◆</i> Video Editing <i>◆</i> AI Chatbots <i>◆</i> QR Digital Menus <i>◆</i> Google Business Profile <i>◆</i> Reels · Shorts · TikToks <i>◆</i></span>
+  </div></div>
+
+  <section class="blk wrap">
+    <p class="kicker reveal">What I Do</p>
+    <h2 class="sec reveal">Five services. One standard: quality you can see.</h2>
+    <div class="grid g5">
+      <article class="card glass span3 tilt">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></div>
+        <h3>Modern Websites</h3>
+        <p>Animated, mobile-friendly business websites — landing pages to full multi-page sites with contact forms, Google Maps, and smooth animations. Deployed live.</p>
+        <p class="price">From PKR 10,000 <small>International from $80 · Free 1-page demo first</small></p>
+        <button class="go" data-go="services" style="background:none;border:0;border-bottom:1px solid #fff;color:#fff;font:inherit;font-weight:500;cursor:pointer;padding:0 0 2px">Website details →</button>
+      </article>
+      <article class="card glass span3 tilt">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/></svg></div>
+        <h3>Video Editing</h3>
+        <p>Scroll-stopping Reels, Shorts &amp; TikToks — clean cuts, sound-synced transitions, bold captions, cinematic color grading. Every edit built to stop the scroll.</p>
+        <p class="price">Rs. 2,000 / reel <small>Pack of 5 reels: Rs. 8,000 · International from $15</small></p>
+        <button class="go" data-go="services" style="background:none;border:0;border-bottom:1px solid #fff;color:#fff;font:inherit;font-weight:500;cursor:pointer;padding:0 0 2px">Editing details →</button>
+      </article>
+      <article class="card glass span2 reveal tilt">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 7V4M8.5 13h.01M15.5 13h.01M9 16.5h6"/></svg></div>
+        <h3>AI Chatbots</h3>
+        <p>AI assistants for your WhatsApp &amp; Instagram — they answer customers 24/7, even while you sleep. Menus, prices, bookings, all automatic.</p>
+        <p class="price">From PKR 15,000 <small>WhatsApp bot PKR 30,000</small></p>
+      </article>
+      <article class="card glass span2 reveal tilt">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M13 13h3v3h-3zM17 17h3v3h-3z"/></svg></div>
+        <h3>QR Digital Menus</h3>
+        <p>Customers scan, menu opens on their phone — photos, prices, always up to date. No more printing costs. Perfect for restaurants &amp; cafes.</p>
+        <p class="price">PKR 8,000 <small>One-time · International $30</small></p>
+      </article>
+      <article class="card glass span2 reveal tilt">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <h3>Google Business Profile</h3>
+        <p>Get found on Google Search &amp; Maps — complete profile setup, services, photos, and review guidance. Ownership always stays with you.</p>
+        <p class="price">From PKR 5,000 <small>Website + Profile bundle PKR 25,000</small></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Pinned scroll: 3D glass panels rotate as YOU scroll -->
+  <div class="pin-wrap" id="pinWrap">
+    <div class="pin-sticky wrap">
+      <p class="kicker" style="justify-content:center">The Work, In 3D</p>
+      <h2 class="sec filltext" id="pinHead" style="text-align:center;margin-left:auto;margin-right:auto">Three crafts. One scroll.</h2>
+      <div class="pin-stage" id="pinStage">
+        <article class="panel3d" data-panel="0"><img src="assets/editing.jpg" alt="Clean ultrawide monitor with a full-screen scenic image on a tidy desk"><div class="pt"><b>Video Editing</b><p>Reels &amp; Shorts cut on the beat, captioned to stop thumbs.</p></div></article>
+        <article class="panel3d" data-panel="1"><img src="assets/qr-menu.jpg" alt="QR digital menu open on a customer's phone"><div class="pt"><b>Websites &amp; QR Menus</b><p>Modern sites and scan-to-order menus, built mobile-first.</p></div></article>
+        <article class="panel3d" data-panel="2"><img src="assets/chatbot.jpg" alt="AI chatbot answering a customer on a phone"><div class="pt"><b>AI Chatbots</b><p>WhatsApp &amp; Instagram bots answering customers 24/7.</p></div></article>
+      </div>
+      <p class="pin-flip" id="pinFlip">Editing that stops the scroll<small id="pinFlipSub">Keep scrolling — the panels turn with you, nothing plays on its own.</small></p>
+    </div>
+  </div>
+
+  <!-- Word-by-word headline, lit by scroll -->
+  <div class="round-shell light-sec">
+    <section class="word-sec wrap">
+      <p class="kicker">Why It Works</p>
+      <h2 class="wordline" id="wordline">Websites that look premium. Videos that stop thumbs. Bots that answer while you sleep.</h2>
+      <p class="lede" style="margin-top:22px">Every word above lights up only as you scroll — you control the pace, exactly like the sites I build for clients.</p>
+    </section>
+  </div>
+
+  <!-- Orbit + changing last word -->
+  <div class="round-shell green-sec">
+    <section class="orbit-sec wrap">
+      <div class="orbit-grid">
+        <div>
+          <p class="kicker">One Partner</p>
+          <h2 class="sec filltext" id="orbitHead">Everything your business needs to grow — <span class="swapword" id="swapWord">websites</span></h2>
+          <p class="lede" style="color:#cfd8cd">The last word changes as you scroll, and the work circles with you. No three freelancers, no chasing — one person, start to delivery.</p>
+          <div class="hero-cta"><a class="btn" style="background:var(--tan);color:var(--green)" href="https://wa.me/923175493082?text=Hi%20Bilal%2C%20I%20want%20a%20free%201-page%20website%20demo." target="_blank" rel="noopener">Start on WhatsApp</a></div>
+        </div>
+        <div class="orbit" id="orbitBox" aria-hidden="true">
+          <div class="orbit-ring"></div>
+          <div class="orbit-rot" id="orbitRot">
+            <div class="orbit-item" data-o="0"><img src="assets/editing.jpg" alt=""></div>
+            <div class="orbit-item" data-o="1"><img src="assets/qr-menu.jpg" alt=""></div>
+            <div class="orbit-item" data-o="2"><img src="assets/chatbot.jpg" alt=""></div>
+            <div class="orbit-item txt" data-o="3">BM<br>Digital</div>
+          </div>
+          <div class="orbit-core">Web · Video · AI</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Scroll-driven cards strip (moves only when you scroll) -->
+  <div class="round-shell light-sec">
+    <section class="wrap" style="padding-top:64px">
+      <p class="kicker">Made For</p>
+      <h2 class="sec filltext" id="mqHead" style="margin-bottom:0">Built for businesses like yours.</h2>
+    </section>
+    <div class="cards-mq"><div class="cards-track" id="cardsTrack">
+      <article class="ccard"><b>Restaurants &amp; Cafes</b><p>QR menus, websites and Google profiles that fill tables.</p><span class="tg">QR Menu · PKR 8,000</span></article>
+      <article class="ccard"><b>Creators</b><p>Reels &amp; Shorts edited to grow the audience while you create.</p><span class="tg">Reels · Rs. 2,000</span></article>
+      <article class="ccard"><b>Small Businesses</b><p>A premium-looking website plus promo videos that convert.</p><span class="tg">Websites · PKR 10,000</span></article>
+      <article class="ccard"><b>Shops &amp; Salons</b><p>Instagram &amp; WhatsApp bots that answer prices and bookings 24/7.</p><span class="tg">AI Bots · PKR 15,000</span></article>
+      <article class="ccard"><b>Coaches &amp; Educators</b><p>Authority content and landing pages that fill programs.</p><span class="tg">Content + Pages</span></article>
+      <article class="ccard"><b>Restaurants &amp; Cafes</b><p>QR menus, websites and Google profiles that fill tables.</p><span class="tg">QR Menu · PKR 8,000</span></article>
+      <article class="ccard"><b>Creators</b><p>Reels &amp; Shorts edited to grow the audience while you create.</p><span class="tg">Reels · Rs. 2,000</span></article>
+      <article class="ccard"><b>Small Businesses</b><p>A premium-looking website plus promo videos that convert.</p><span class="tg">Websites · PKR 10,000</span></article>
+      <article class="ccard"><b>Shops &amp; Salons</b><p>Instagram &amp; WhatsApp bots that answer prices and bookings 24/7.</p><span class="tg">AI Bots · PKR 15,000</span></article>
+      <article class="ccard"><b>Coaches &amp; Educators</b><p>Authority content and landing pages that fill programs.</p><span class="tg">Content + Pages</span></article>
+    </div></div>
+  </div>
+
+  <!-- Professional duo showcase — two images, proper size, crop & rounded corners -->
+  <section class="showcase wrap">
+    <p class="kicker reveal">Built For Phones First</p>
+    <h2 class="sec reveal filltext" id="duoHead">In your customer's hand, done properly.</h2>
+    <p class="lede reveal">Two flagship deliverables, framed at a clean, consistent size — no oversized, warped images.</p>
+    <div class="duo">
+      <figure class="glass reveal"><img src="assets/qr-menu.jpg" alt="Customer viewing a QR digital menu on a phone at a restaurant table"><figcaption><span class="tagimg">QR Digital Menus</span><b>One scan, your full menu</b><p>Photos and prices on the customer's phone — updated anytime, without reprinting.</p></figcaption></figure>
+      <figure class="glass reveal"><img src="assets/chatbot.jpg" alt="Phone showing an AI chatbot answering a customer on WhatsApp"><figcaption><span class="tagimg">AI Chatbots</span><b>Answers while you sleep</b><p>Prices, timings and bookings handled automatically on WhatsApp &amp; Instagram, 24/7.</p></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="blk wrap">
+    <p class="kicker reveal">Featured Work</p>
+    <h2 class="sec reveal">Work that speaks before I do.</h2>
+    <p class="lede reveal">A glimpse of the demos — AI bots answering live, QR menus, website builds and edits. The demo videos play on their own, muted on loop.</p>
+    <div class="vidgrid">
+      <article class="card glass vidcard reveal"><video src="./bot-demo.mp4" autoplay muted loop playsinline preload="auto" poster="assets/chatbot.jpg" aria-label="Demo video: AI WhatsApp Bot answering a customer"></video><div class="in"><span class="vtag">AI Bot · Demo</span><h3>AI WhatsApp Bot</h3><p>Answers customers 24/7 from your real prices, timings and services — and hands over to you when a human is needed.</p></div></article>
+      <article class="card glass vidcard reveal"><video src="./qr-menu-demo.mp4" autoplay muted loop playsinline preload="auto" poster="assets/qr-menu.jpg" aria-label="Demo video: QR digital menu opening on a phone"></video><div class="in"><span class="vtag">QR Menu · Demo</span><h3>QR Digital Menu</h3><p>Scan &amp; order — a live menu page plus the QR code image, ready for your tables.</p></div></article>
+      <article class="card glass vidcard reveal"><video src="./website-showcase.mp4" autoplay muted loop playsinline preload="auto" poster="assets/editing.jpg" aria-label="Demo video: animated website builds"></video><div class="in"><span class="vtag">Websites · Demo</span><h3>Website Showcase</h3><p>Animated business websites — designed, built and deployed live, mobile-first.</p></div></article>
+      <article class="card glass vidcard reveal"><video src="./instagram-bot-demo.mp4" autoplay muted loop playsinline preload="auto" poster="assets/chatbot.jpg" aria-label="Demo video: Instagram AI bot replying in DMs"></video><div class="in"><span class="vtag">AI Bot · Demo</span><h3>Instagram AI Bot</h3><p>Auto-replies in Instagram DMs — prices, bookings and lead capture, around the clock.</p></div></article>
+      <article class="card glass vidcard reveal"><video src="./editing-portfolio.mp4" autoplay muted loop playsinline preload="auto" poster="assets/editing.jpg" aria-label="Demo video: editing portfolio, before and after"></video><div class="in"><span class="vtag">Editing · Demo</span><h3>Editing Portfolio</h3><p>Editing magic — before &amp; after. Reels cut on the beat, captioned to stop thumbs.</p></div></article>
+    </div>
+    <div style="margin-top:22px"><button class="btn btn-ghost" data-go="work">See the full Work page</button></div>
+  </section>
+
+  <section class="blk wrap">
+    <p class="kicker reveal">Why Work With Me</p>
+    <h2 class="sec reveal">Direct, fast, no agency markup.</h2>
+    <div class="grid g3">
+      <article class="card glass reveal tilt"><div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg></div><h3>Fast Delivery</h3><p>Clear timelines, no ghosting. You always know where your project stands.</p></article>
+      <article class="card glass reveal tilt"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H4l2.3-2.9A8 8 0 1 1 21 12z"/><path d="M8.5 11h7M8.5 14h4"/></svg></div><h3>Clear Communication</h3><p>Simple updates in plain words. Questions answered within hours, not days.</p></article>
+      <article class="card glass reveal tilt"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/></svg></div><h3>Revisions Till Happy</h3><p>I don't disappear after delivery — we refine until it's right.</p></article>
+    </div>
+  </section>
+
+  <section class="blk wrap">
+    <p class="kicker reveal">How It Works</p>
+    <h2 class="sec reveal">Simple, transparent, no surprises.</h2>
+    <div class="steps">
+      <div class="step glass reveal"><div class="num">1</div><h3>You Reach Out</h3><p>Fill the contact form, DM me on Instagram, or order directly on Fiverr. Tell me what you need — even roughly. I'll ask a few sharp questions, then give you one clear price and timeline.</p></div>
+      <div class="step glass reveal"><div class="num">2</div><h3>I Create</h3><p>I edit, build, or train bots. You get real progress updates — never silence. For websites, 50% advance starts the work: the golden rule that protects us both.</p></div>
+      <div class="step glass reveal"><div class="num">3</div><h3>You Launch</h3><p>Review the first version, request revisions, approve the final. You receive finished files, live links, and backups — with my support still behind you.</p></div>
+    </div>
+  </section>
+
+  <section class="blk wrap">
+    <p class="kicker reveal">Who I Help</p>
+    <h2 class="sec reveal">Different people, same promise.</h2>
+    <div class="grid g3">
+      <article class="card glass reveal"><h3>Creators</h3><p>Reels &amp; Shorts that grow your audience while you focus on creating. Consistent posting without the editing burnout.</p></article>
+      <article class="card glass reveal"><h3>Small Businesses</h3><p>A website that looks like a million bucks plus promo videos that turn visitors into paying customers.</p></article>
+      <article class="card glass reveal"><h3>Coaches</h3><p>Authority-building content and landing pages that fill your programs and DMs with the right people.</p></article>
+      <article class="card glass reveal"><h3>Restaurants &amp; Cafes</h3><p>QR digital menus and websites that fill tables — customers scan, see photos and prices, and order without waiting.</p></article>
+      <article class="card glass reveal"><h3>Educators</h3><p>Clear, engaging videos and clean websites for courses, academies, and training programs.</p></article>
+      <article class="card glass reveal"><h3>That's You?</h3><p>Then we're already a good fit. <a href="https://wa.me/923175493082" target="_blank" rel="noopener" style="font-weight:500">Message me on WhatsApp →</a></p></article>
+    </div>
+  </section>
+
+  <section class="blk wrap">
+    <p class="kicker reveal">Client Reviews</p>
+    <h2 class="sec reveal">★★★★★ — the wall is filling up.</h2>
+    <p class="lede reveal">Real reviews will appear here as projects complete.</p>
+    <div class="grid g3">
+      <article class="card glass reveal"><p style="color:#fff">★★★★★</p><p style="margin-top:10px">"Your review could be here! First clients get featured on this wall."</p><p class="price">— You? Let's talk →</p></article>
+      <article class="card glass reveal"><p style="color:#fff">★★★★★</p><p style="margin-top:10px">"Every project gets my full attention — quality over quantity, always."</p><p class="price">— BM Digital promise</p></article>
+      <article class="card glass reveal"><p style="color:#fff">★★★★★</p><p style="margin-top:10px">"Websites, videos, bots — one partner instead of three freelancers."</p><p class="price">— The BM Digital way</p></article>
+    </div>
+  </section>
+
+  <section class="blk wrap">
+    <div class="card glass" style="padding:clamp(30px,5vw,54px);text-align:center">
+      <h2 style="font-size:clamp(30px,5vw,50px)">Let's talk about your project.</h2>
+      <p class="lede" style="margin:14px auto 26px">Tell me what you need — a website, a video, or a bot. I reply within 24 hours, and every website starts with a free 1-page demo.</p>
+      <div class="hero-cta" style="justify-content:center;margin-top:0">
+        <a class="btn btn-white" href="https://wa.me/923175493082" target="_blank" rel="noopener">WhatsApp +92 317 5493082</a>
+        <button class="btn btn-ghost" data-go="contact">Contact Page</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================= SERVICES ============================= -->
+<div class="page" id="page-services">
+  <div class="wrap">
+    <section class="blk" style="padding-top:150px">
+      <p class="kicker">Services</p>
+      <h2 class="sec">Every service, spelled out. No hidden extras.</h2>
+      <p class="lede">Prices in PKR for Pakistan, with international prices where the original site lists them. Every website starts with a FREE 1-page demo before you pay anything.</p>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">01 · Website Development</p>
+      <h2 class="sec">A modern website — demo first, pay after.</h2>
+      <p class="lede">Before you pay anything, I build a free 1-page demo of your website so you can see the design and quality first. If you like it, we continue to the full website. 50% advance before work starts, 50% on delivery. The domain is bought separately in your name after the advance.</p>
+      <div class="grid g3">
+        <article class="plan glass"><h3>Simple</h3><p class="amt">PKR 10,000</p><p style="color:var(--muted)">1–3 pages, mobile-friendly, WhatsApp and call buttons, contact form.</p><ul><li>Mobile-friendly pages</li><li>Services &amp; prices shown</li><li>WhatsApp &amp; call buttons</li><li>Contact form</li></ul><a class="btn btn-ghost" href="https://wa.me/923175493082?text=Hi%20Bilal%2C%20I%20want%20the%20Simple%20website%20(PKR%2010%2C000).%20Please%20make%20my%20free%20demo." target="_blank" rel="noopener">Start with free demo</a></article>
+        <article class="plan glass hot"><span class="tag">Most Popular</span><h3>Business</h3><p class="amt">PKR 18,000</p><p style="color:var(--muted)">Up to 5 pages, services and gallery sections, Google Map location.</p><ul><li>Everything in Simple</li><li>Gallery section</li><li>Google Map location</li><li>Basic on-page SEO</li></ul><a class="btn btn-white" href="https://wa.me/923175493082?text=Hi%20Bilal%2C%20I%20want%20the%20Business%20website%20(PKR%2018%2C000).%20Please%20make%20my%20free%20demo." target="_blank" rel="noopener">Start with free demo</a></article>
+        <article class="plan glass"><h3>Complete</h3><p class="amt">PKR 30,000</p><p style="color:var(--muted)">Up to 10 pages, full business website with all sections.</p><ul><li>Everything in Business</li><li>Up to 10 pages</li><li>Premium animations</li><li>Launch-day support</li></ul><a class="btn btn-ghost" href="https://wa.me/923175493082?text=Hi%20Bilal%2C%20I%20want%20the%20Complete%20website%20(PKR%2030%2C000).%20Please%20make%20my%20free%20demo." target="_blank" rel="noopener">Start with free demo</a></article>
+      </div>
+      <div class="grid g3">
+        <article class="card glass"><h3>Mobile-First Design</h3><p>Looks right on every phone — where most of your customers will see it first.</p></article>
+        <article class="card glass"><h3>WhatsApp &amp; Call Buttons</h3><p>Customers reach you in one tap, on every page.</p></article>
+        <article class="card glass"><h3>Basic On-Page SEO</h3><p>Titles, descriptions, and structure included with every website.</p></article>
+        <article class="card glass"><h3>Map &amp; Contact Form</h3><p>Google Map location plus a working contact form.</p></article>
+        <article class="card glass"><h3>Live Deployment</h3><p>You get a working link, plus the website files. You own everything — 100%.</p></article>
+        <article class="card glass"><h3>3–7 Day Delivery</h3><p>Ready days after advance and content, not months. Custom HTML/CSS/JS — no bloated themes.</p></article>
+      </div>
+      <p class="lede" style="margin-top:26px"><b style="color:#fff">International website packages:</b> Starter $80 (1 landing page, 3 days) · Business $150 (up to 5 pages, 5 days) · Complete $300 (up to 10 pages, 7 days) — all with contact form, Google Maps and live deployment.</p>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">02 · Video Editing</p>
+      <h2 class="sec">Reels, Shorts &amp; TikToks that stop the scroll.</h2>
+      <div class="grid g2">
+        <article class="card glass imgcard"><img src="assets/editing.jpg" alt="Clean ultrawide monitor with a full-screen scenic image on a tidy desk"><div class="in"><h3>How every edit is built</h3><p>Hook-first opening — the first 3 seconds engineered to stop thumbs — beat-synced cuts, kinetic word-by-word captions, cinematic color grading, sound design, and delivery in the perfect format for each platform (9:16 vertical, up to 1080p, no watermarks, ever).</p></div></article>
+        <div class="grid" style="margin-top:0;gap:16px">
+          <article class="plan glass"><h3>1 Reel</h3><p class="amt">Rs. 2,000</p><p style="color:var(--muted)">One scroll-stopping vertical edit, delivered in 2–3 days. International: Starter Reel $15 (1 revision, 2-day delivery).</p></article>
+          <article class="plan glass"><h3>5 Reels Pack</h3><p class="amt">Rs. 8,000</p><p style="color:var(--muted)">Save Rs. 2,000 on a pack of five edits. International tiers: Viral Pack $35 (3 videos) · Creator Growth $70 (5 videos + extras).</p></article>
+          <article class="plan glass"><h3>Free Samples</h3><p class="amt">Free</p><p style="color:var(--muted)">First-time brand collaborations get 1–2 free sample edits to judge the quality first. AI films add: AI spokesperson direction and script structuring for ads &amp; campaigns.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">03 · AI Chatbots</p>
+      <h2 class="sec">Your business, always awake.</h2>
+      <p class="lede">A bot that answers your customers 24/7 — prices, timings, bookings and directions — from your real business information, never guesses. Done-for-you setup: you only provide your business info.</p>
+      <div class="grid g2">
+        <article class="card glass imgcard"><img src="assets/chatbot.jpg" alt="AI chatbot answering a customer on a phone"><div class="in"><h3>How it works</h3><p>You ask in plain words → the bot understands and answers instantly, at 3 PM or 3 AM → you decide, or the bot hands over to you on WhatsApp when a human is needed. It also captures leads — names, numbers and requirements — while you sleep.</p></div></article>
+        <div class="ptable" style="margin-top:0">
+          <table>
+            <tr><th>Bot</th><th>Price</th></tr>
+            <tr><td>Website Chatbot</td><td>PKR 15,000</td></tr>
+            <tr><td>Instagram Bot</td><td>PKR 20,000</td></tr>
+            <tr><td>Website Voice Bot</td><td>PKR 25,000</td></tr>
+            <tr><td>WhatsApp Bot</td><td>PKR 30,000</td></tr>
+            <tr><td>Maintenance (optional)</td><td>PKR 5,000 / month</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="botbox glass">
+        <h3 style="font-size:20px;margin-bottom:14px">Try the BM Bot demo</h3>
+        <div id="botlog">
+          <div class="msg bot">Hi! I'm BM Bot — a demo. Ask me about websites, video editing, AI chatbots, pricing — or how to start a project!</div>
+        </div>
+        <div class="quick">
+          <button data-q="How much is a website?">How much is a website?</button>
+          <button data-q="What video editing do you do?">What video editing do you do?</button>
+          <button data-q="Tell me about AI chatbots">Tell me about AI chatbots</button>
+          <button data-q="How do I order?">How do I order?</button>
+          <button data-q="Who is Bilal?">Who is Bilal?</button>
+        </div>
+        <div class="botrow">
+          <input id="botin" type="text" placeholder="Ask about services or pricing…" aria-label="Ask BM Bot">
+          <button class="btn btn-white btn-sm" id="botsend">Ask</button>
+        </div>
+        <p style="color:var(--muted);font-size:13.5px;margin-top:12px">Demo version — the real one answers from your business data. Want a bot like this for your business? <a href="https://wa.me/923175493082" target="_blank" rel="noopener" style="font-weight:500">Ask on WhatsApp →</a></p>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">04 · QR Digital Menus</p>
+      <h2 class="sec">One scan, your full menu on their phone.</h2>
+      <div class="grid g2">
+        <article class="card glass imgcard"><img src="assets/qr-menu.jpg" alt="Customer viewing a digital menu on a phone after scanning a QR code"><div class="in"><h3>What I need from you</h3><p>Your menu (a photo of the paper menu, or a list of dishes and prices), food photos — phone photos are fine — plus your restaurant name, logo, WhatsApp number and address. Prices and dishes can be updated later without reprinting anything.</p></div></article>
+        <div class="grid" style="margin-top:0;gap:16px">
+          <article class="plan glass"><h3>Pakistan</h3><p class="amt">PKR 8,000</p><p style="color:var(--muted)">One-time payment. Live menu page plus QR code image.</p></article>
+          <article class="plan glass"><h3>International</h3><p class="amt">$30</p><p style="color:var(--muted)">One-time payment. Same live menu page and QR code. The menu page itself has no monthly fee.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">05 · Google Business Profile</p>
+      <h2 class="sec">Get found on Google Search &amp; Maps.</h2>
+      <p class="lede">Reviews build trust before a customer ever calls you. I need your business name, service areas, phone number, website link, and a few photos — ownership always stays with you.</p>
+      <div class="grid g3">
+        <article class="plan glass"><h3>Profile Setup</h3><p class="amt">PKR 5,000</p><p style="color:var(--muted)">Complete profile: name, category, service areas, phone, website, hours, services, photos.</p></article>
+        <article class="plan glass hot"><span class="tag">Bundle</span><h3>Website + Profile</h3><p class="amt">PKR 25,000</p><p style="color:var(--muted)">A new website plus a complete Google profile, launched together.</p></article>
+        <article class="plan glass"><h3>Monthly Management</h3><p class="amt">PKR 2,000/mo</p><p style="color:var(--muted)">Posts, review replies, and detail updates every month — plus verification guidance (video or postcard, whichever Google offers).</p></article>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ============================= WORK ============================= -->
+<div class="page" id="page-work">
+  <div class="wrap">
+    <section class="blk" style="padding-top:150px">
+      <p class="kicker">My Work</p>
+      <h2 class="sec">Every project, with the story behind it.</h2>
+      <div class="grid g3">
+        <article class="card glass imgcard"><img src="assets/editing.jpg" alt="Premium editing studio desk with ultrawide monitor"><div class="in"><p class="kicker" style="margin-bottom:8px">Website · Animated</p><h3>Animated Business Websites</h3><p>Modern, mobile-friendly sites with animations, contact forms, Google Maps, and smooth page transitions. Designed, built, and deployed live — like this very site.</p></div></article>
+        <article class="card glass imgcard"><img src="assets/chatbot.jpg" alt="AI chatbot demo on a phone"><div class="in"><p class="kicker" style="margin-bottom:8px">AI Bot · Live Demo</p><h3>AI WhatsApp &amp; Instagram Bots</h3><p>Auto-replies that answer customers 24/7, share menus and prices, capture leads, and hand over to a human on WhatsApp.</p></div></article>
+        <article class="card glass imgcard"><img src="assets/qr-menu.jpg" alt="QR menu demo in a restaurant"><div class="in"><p class="kicker" style="margin-bottom:8px">QR Menu · Restaurants</p><h3>QR Digital Menus</h3><p>Scan &amp; order menus for restaurants and cafes — photos, prices, and instant updates with no reprinting.</p></div></article>
+        <article class="card glass imgcard"><video class="workvid" controls playsinline preload="metadata"><source src="./rolex.mp4" type="video/mp4"></video><div class="in"><p class="kicker" style="margin-bottom:8px">Reels · Shorts</p><h3>Scroll-Stopping Short-Form Edits</h3><p>Reels, Shorts &amp; TikToks edited with clean cuts, beat-synced transitions, bold captions, and cinematic grading. Built to stop the scroll in the first 3 seconds.</p></div></article>
+        <article class="card glass imgcard"><video class="workvid" controls playsinline preload="metadata"><source src="./luxury.mp4" type="video/mp4"></video><div class="in"><p class="kicker" style="margin-bottom:8px">Luxury · Cinematic</p><h3>Luxury Cinematic Edit</h3><p>High-end product/lifestyle edit with slow-motion pacing, film-grade color, and elegant typography. Made for brands that want a premium feel.</p></div></article>
+        <article class="card glass imgcard"><video class="workvid" controls playsinline preload="metadata"><source src="./sheru.mp4" type="video/mp4"></video><div class="in"><p class="kicker" style="margin-bottom:8px">Story · Character</p><h3>Character-Driven Short Film</h3><p>Story-first short film work — consistent characters across scenes, emotional pacing, and a complete arc in under a minute. Storytelling is editing's secret weapon.</p></div></article>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">Collections</p>
+      <h2 class="sec">Curated sets of my best work.</h2>
+      <div class="grid g3">
+        <article class="card glass"><h3>Reels Collection</h3><p>High-energy short-form edits built around the 3-second hook — beat-synced cuts, kinetic captions, trending transitions, cinematic grades. For creators, coaches, and brands posting 3–5x a week: talking-head reels, product teasers, luxury edits, story-driven shorts.</p></article>
+        <article class="card glass"><h3>AI Films Collection</h3><p>AI spokesperson videos and cinematic AI-driven pieces — script-to-screen work including concept, avatar direction, pacing, and sound design. For brands that need a "presenter" without shoot days or big budgets.</p></article>
+        <article class="card glass"><h3>Websites Collection</h3><p>Animated, mobile-friendly business sites — landing pages to full multi-page builds with forms, maps, galleries, and interactive elements. All live-deployed. New pieces added as projects complete.</p></article>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">What Every Project Includes</p>
+      <h2 class="sec">My non-negotiables — on every single project.</h2>
+      <div class="grid g3">
+        <article class="card glass"><h3>Revisions Included</h3><p>Every package comes with a stated number of revisions. We tweak, adjust, and polish until it's right — that's the deal, in writing.</p></article>
+        <article class="card glass"><h3>Clean Delivery</h3><p>Final files in the right formats, neatly organized and ready to use. Websites arrive with a live link plus a ZIP backup and a short usage guide.</p></article>
+        <article class="card glass"><h3>Clear Timelines</h3><p>You always know what to expect and when. No ghosting, no vague "soon" — real dates, real updates, real delivery.</p></article>
+      </div>
+      <div class="ptable">
+        <table>
+          <tr><th>Deliverables</th><th>What you receive</th><th>Timeline</th></tr>
+          <tr><td>Video Projects</td><td>Finished MP4 (up to 1080p) in your platform's aspect ratio — 9:16 for Reels/Shorts/TikTok, 16:9 for YouTube — plus your package's revision rounds. No watermarks, ever.</td><td>2–5 days · rush available</td></tr>
+          <tr><td>Website Projects</td><td>A live, working website link (deployed, not just files), complete source code as ZIP backup, a short guide on updating text/images, and launch-day support. You own everything — 100%.</td><td>3–7 days by page count</td></tr>
+          <tr><td>AI Chatbot Projects</td><td>A trained chatbot for WhatsApp or Instagram, loaded with your business info, FAQs, and menu or services, plus a demo video showing it answering. Real answers only — no made-up replies, ever.</td><td>3–5 days · maintenance available</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">Design Showcase &amp; Elements</p>
+      <h2 class="sec">Live elements I build into websites.</h2>
+      <p class="lede">Morphing buttons, scroll-triggered bars, WhatsApp-style chat widgets, FAQ accordions, rotating testimonials, animated counters, hover cards and typing headlines — every demo on my original site is real code, and each one can live on yours. This page's 3D scroll card and BM Bot are working examples.</p>
+      <div class="pills">
+        <span class="chip">Morphing Button</span><span class="chip">Scroll-Triggered Bars</span><span class="chip">Chat Widget</span><span class="chip">FAQ Accordion</span><span class="chip">Rotating Testimonials</span><span class="chip">Animated Counters</span><span class="chip">Hover Cards</span><span class="chip">Typing Headlines</span><span class="chip">Star Ratings</span><span class="chip">Timelines</span>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">BM Academy — Free Lessons</p>
+      <h2 class="sec">Learn the craft — or hire me to do it.</h2>
+      <div class="grid g3">
+        <article class="card glass"><h3>1 · The 3-Second Hook</h3><p>Viewers decide in the first 3 seconds. Start with your most exciting frame — the result, the shock, the question. Put the payoff first, then explain, like movie trailers do.</p></article>
+        <article class="card glass"><h3>2 · Cut on the Beat</h3><p>Random cuts feel amateur. Place cuts on beat drops — in CapCut, the audio waveform spikes are your cut points. Cut on the big beats, not every beat.</p></article>
+        <article class="card glass"><h3>3 · Captions for the Silent Majority</h3><p>Most people watch with sound off. Bold, word-by-word kinetic captions in the centre of the frame — 3–5 words per screen, key words highlighted.</p></article>
+        <article class="card glass"><h3>4 · One Clear Button (Websites)</h3><p>Every page needs ONE obvious action: Call Now, WhatsApp Us, Book a Table. Make it big, repeat it after every section — and add a sticky WhatsApp button on mobile.</p></article>
+        <article class="card glass"><h3>5 · Demand First, Product Second</h3><p>Check search demand before anything else. Boring products with steady demand beat exciting products with no demand, every time.</p></article>
+        <article class="card glass"><h3>6 · Consistency Beats Perfection</h3><p>3–5 solid posts a week beats one masterpiece a month. "Done and posted" always beats "perfect and in drafts."</p></article>
+      </div>
+      <div style="margin-top:22px"><a class="btn btn-white" href="https://wa.me/923175493082?text=Hi%20Bilal%2C%20I%20want%20you%20to%20do%20it%20for%20me." target="_blank" rel="noopener">Want me to just do it for you?</a></div>
+    </section>
+  </div>
+</div>
+
+<!-- ============================= ABOUT ============================= -->
+<div class="page" id="page-about">
+  <div class="wrap">
+    <section class="blk" style="padding-top:150px">
+      <p class="kicker">About BM Digital</p>
+      <h2 class="sec">Hi, I'm Bilal Mughal.</h2>
+      <p class="lede" style="max-width:760px">I'm a video editor, website builder, and AI chatbot developer from Pakistan. What started as a passion for editing Reels grew into a full creative service: I build animated websites, edit scroll-stopping short-form videos, and build AI chatbots that answer customers 24/7.</p>
+      <p class="lede" style="max-width:760px;margin-top:14px">My rule is simple: <b style="color:#fff">quality you can see, communication you can trust.</b> No agency fluff, no middlemen, no disappearing acts — you work directly with me, from the first message to the final delivery.</p>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">My Story</p>
+      <h2 class="sec">From curiosity to a one-person creative studio.</h2>
+      <div class="grid g2">
+        <article class="card glass"><h3>How it started</h3><p>Like most great stories, mine started with curiosity. I picked up video editing because I was fascinated by how a few cuts, some music, and the right pacing could turn ordinary footage into something people couldn't stop watching. I spent countless nights learning — transitions, color grading, sound design, storytelling — one skill at a time.</p><p style="margin-top:10px">Then came the Reels era. Short-form video exploded, and I was ready. I edited Reels, Shorts, and TikToks, learning what makes people stop scrolling: the hook in the first 3 seconds, cuts on the beat, captions that pop.</p></article>
+        <article class="card glass"><h3>Where it led</h3><p>I noticed small businesses around me struggling with the same problem: they needed an online presence but couldn't afford agencies. So I learned web development — clean HTML, CSS, and JavaScript — and started building modern, animated, mobile-friendly websites that look like they cost ten times more.</p><p style="margin-top:10px">Then came AI. I built chatbots that answer customers around the clock — on WhatsApp and Instagram — and added AI chatbots and QR digital menus to my services. Today, BM Digital covers what every modern business needs: a website that impresses, videos that attract, and bots that never sleep. I'm still learning every single day — and the journey is just getting started.</p></article>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">My Process</p>
+      <h2 class="sec">How every project runs — no surprises.</h2>
+      <div class="steps" style="grid-template-columns:repeat(3,1fr)">
+        <div class="step glass"><div class="num">1</div><h3>Discover</h3><p>You tell me what you need. I ask a few sharp questions so we start aligned. For websites, I take 50% advance here — the golden rule that protects us both.</p></div>
+        <div class="step glass"><div class="num">2</div><h3>Build</h3><p>I get to work — editing, coding, or training bots. You get clear progress updates, not silence. Questions get answered within hours.</p></div>
+        <div class="step glass"><div class="num">3</div><h3>Refine</h3><p>You review the first version. We revise together — every package includes revisions, and I don't disappear after delivery.</p></div>
+        <div class="step glass"><div class="num">4</div><h3>Deliver &amp; Launch</h3><p>Final files, live links, backups — everything handed over cleanly. Websites go live; videos are ready to post; bots are ready to answer.</p></div>
+        <div class="step glass"><div class="num">5</div><h3>Support</h3><p>Something needs tweaking after launch? I'm still here. Ongoing support and monthly packages available for long-term partners.</p></div>
+        <div class="step glass"><div class="num">★</div><h3>Honesty First</h3><p>If a request is outside my skills, I'll tell you plainly instead of faking it. I'd rather lose a project than deliver something mediocre.</p></div>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">Tools I Use</p>
+      <h2 class="sec">The right tool for each job.</h2>
+      <p class="lede">Editing in CapCut, websites in clean custom code, bots on WhatsApp &amp; Instagram.</p>
+      <div class="pills">
+        <span class="chip">CapCut</span><span class="chip">AI Video Tools</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Cloudflare Pages</span><span class="chip">Netlify</span><span class="chip">Canva</span><span class="chip">Google Workspace</span>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">The Journey So Far</p>
+      <div class="tl">
+        <div><h3>2023 — The Editing Years</h3><p>Started editing. Learned cuts, transitions, grading, sound — and fell in love with short-form storytelling.</p></div>
+        <div><h3>2024 — The Reels Era</h3><p>Went deep into Reels, Shorts &amp; TikToks. Cracked the formula: hook fast, cut on beat, caption everything.</p></div>
+        <div><h3>2025 — Websites</h3><p>Added website development services. BM Digital became a full creative studio.</p></div>
+        <div><h3>2026 — Going Pro</h3><p>Launched on Fiverr with three service lanes, built this portfolio site, and started taking on clients worldwide.</p></div>
+        <div><h3>Next — AI + Automation</h3><p>Mastering AI video workflows and business chatbots — the next skills in the pipeline, one at a time.</p></div>
+        <div><h3>Future — Your Project</h3><p>The next milestone on this timeline could be working with you. Let's make it happen.</p></div>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">Jobs &amp; Collaborations</p>
+      <h2 class="sec">Work with BM Digital — as a client or a collaborator.</h2>
+      <div class="grid g3">
+        <article class="card glass"><h3>Hire Me (Freelance)</h3><p>I'm currently accepting freelance projects in video editing, website development &amp; AI chatbot work. Direct, fast, no agency markup. Solo freelancer · replies within 24 hours.</p></article>
+        <article class="card glass"><h3>Thumbnail Designer</h3><p>YouTube-style thumbnails and Fiverr gig images — bold text, clean composition, click-worthy but honest. Per-project pay or revenue split on gigs we run together.</p></article>
+        <article class="card glass"><h3>Scriptwriter &amp; Voice Artist</h3><p>Short-form scripts with hooks (30–60 seconds) and clean English/Urdu voiceovers for explainers and ads. How to pitch me: show, don't tell — send 3 of your best pieces, be specific, start small with one paid trial.</p></article>
+      </div>
+      <p class="lede" style="margin-top:22px">What I value: reliability over raw talent, clear communication over fancy jargon, honesty about what you can't do.</p>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">Conferences &amp; Events</p>
+      <h2 class="sec">Talks, workshops &amp; appearances.</h2>
+      <p class="lede">No upcoming events yet — I'm focused on client work right now, but I'd love to speak at your event. Invite me with: event name, date, audience size, and which topic fits. I reply within 48 hours. Local (Pakistan) and virtual events welcome. Formats: talks (30–45 min), workshops (2–3 hrs), panels.</p>
+      <div class="grid g2" style="margin-top:24px">
+        <article class="card glass"><h3>Editing for Attention</h3><p>How short-form editing actually works: hooks, pacing, captions, and sound — with live before/after breakdowns. For creator meetups &amp; media students.</p></article>
+        <article class="card glass"><h3>AI Content on Zero Budget</h3><p>How I make AI spokesperson videos and cinematic content with free/affordable tools. Live demo included. For startups &amp; marketing teams.</p></article>
+        <article class="card glass"><h3>Websites That Sell</h3><p>What makes a small-business website actually bring customers: one clear button, speed, trust signals — with live teardowns. For business chambers &amp; expos.</p></article>
+        <article class="card glass"><h3>Freelancing from Pakistan</h3><p>The real playbook: Fiverr, LinkedIn outreach, pricing, avoiding scams, getting paid via Payoneer. Honest numbers, no guru fluff. For students &amp; freelancers.</p></article>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ============================= PRICING ============================= -->
+<div class="page" id="page-pricing">
+  <div class="wrap">
+    <section class="blk" style="padding-top:150px">
+      <p class="kicker">Pricing</p>
+      <h2 class="sec">Simple plans. No hidden fees.</h2>
+      <p class="lede">Non-profits &amp; students get discounts — just ask. Monthly/bulk work is always cheaper per unit than one-offs, and first-time brand collabs can include 1 free sample edit.</p>
+      <div class="grid g3">
+        <article class="plan glass"><h3>Starter</h3><p style="color:var(--muted)">Pay per project. Perfect for trying me out.</p><p class="amt">From $15</p><ul><li>1 Reel / Short edit</li><li>1–2 revisions</li><li>Delivery in days</li><li>Email support</li><li>No watermark, ever</li></ul><button class="btn btn-ghost" data-go="contact">Get a quote</button></article>
+        <article class="plan glass hot"><span class="tag">Most Popular</span><h3>Growth</h3><p style="color:var(--muted)">Monthly packs for creators &amp; businesses.</p><p class="amt">From $100/mo</p><ul><li>Everything in Starter</li><li>Monthly content packs (8+ videos)</li><li>Priority delivery</li><li>1 bonus revision per project</li><li>WhatsApp priority support</li></ul><button class="btn btn-white" data-go="contact">Get a quote</button></article>
+        <article class="plan glass"><h3>Custom</h3><p style="color:var(--muted)">For teams, brands &amp; serious scale.</p><p class="amt">Let's Talk</p><ul><li>Everything in Growth, plus:</li><li>Dedicated priority support</li><li>Custom integrations (chatbots, booking)</li><li>Full website + content bundles</li><li>NDA available on request</li></ul><button class="btn btn-ghost" data-go="contact">Get a quote</button></article>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">Market — Services &amp; Pricing</p>
+      <h2 class="sec">Everything I sell, in one place.</h2>
+      <p class="lede">Order via Fiverr or direct.</p>
+      <div class="ptable">
+        <table>
+          <tr><th>Service</th><th>Starter</th><th>Standard</th><th>Premium</th></tr>
+          <tr><td>Video Editing</td><td>$15 · 1 Reel</td><td>$35 · 3 videos</td><td>$70 · 5 videos + extras</td></tr>
+          <tr><td>Websites</td><td>$80 · Landing page</td><td>$150 · 5-page site</td><td>$300 · 10-page site</td></tr>
+          <tr><td>AI Chatbots</td><td>PKR 15,000 · Website bot</td><td>PKR 20,000 · Instagram bot</td><td>PKR 30,000 · WhatsApp bot</td></tr>
+          <tr><td>Websites (Pakistan)</td><td>PKR 10,000 · Simple</td><td>PKR 18,000 · Business</td><td>PKR 30,000 · Complete</td></tr>
+          <tr><td>Video Editing (Pakistan)</td><td>Rs. 2,000 · 1 Reel</td><td>Rs. 8,000 · 5 Reels</td><td>Free samples for first collabs</td></tr>
+          <tr><td>QR Digital Menus</td><td>PKR 8,000 · Pakistan</td><td>$30 · International</td><td>No monthly fee</td></tr>
+          <tr><td>Google Business Profile</td><td>PKR 5,000 · Setup</td><td>PKR 25,000 · Website + Profile</td><td>PKR 2,000/mo · Management</td></tr>
+        </table>
+      </div>
+      <div class="grid g3">
+        <article class="card glass"><h3>For Creators</h3><p>Reels, Shorts &amp; TikToks that stop the scroll.</p></article>
+        <article class="card glass"><h3>For Small Businesses</h3><p>Websites + promo videos that bring customers.</p></article>
+        <article class="card glass"><h3>For Restaurants</h3><p>QR menus + websites that fill tables.</p></article>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">Tiers In Detail</p>
+      <h2 class="sec">Exactly what each tier includes.</h2>
+      <div class="grid g3">
+        <article class="card glass"><h3>Starter Reel — $15</h3><p>1 vertical video (up to 30 sec), clean cuts, color grading, kinetic captions, 1 revision, 2-day delivery. Perfect for trying my style with zero risk.</p></article>
+        <article class="card glass"><h3>Viral Pack — $35</h3><p>3 videos, everything in Starter + sound design &amp; SFX, 2 revisions, 3-day delivery. Perfect for a week of consistent posting.</p></article>
+        <article class="card glass"><h3>Creator Growth — $70</h3><p>5 videos, everything in Viral + motion graphics, custom thumbnail, source files, 3 revisions, 5-day delivery. For serious creators &amp; brands.</p></article>
+        <article class="card glass"><h3>Website Chatbot — PKR 15,000</h3><p>Chatbot on your website answering FAQs from your business info, contact links, 1 revision, 3-day delivery. For websites that lose visitors after hours.</p></article>
+        <article class="card glass"><h3>Instagram Bot — PKR 20,000</h3><p>Auto-replies in Instagram DMs, lead capture, handoff to WhatsApp, 2 revisions, 5-day delivery. For creators and shops drowning in DMs.</p></article>
+        <article class="card glass"><h3>WhatsApp Bot — PKR 30,000</h3><p>Everything in Instagram + WhatsApp auto-replies, menu and order help, 3 revisions, 7-day delivery. Maintenance PKR 5,000/month.</p></article>
+        <article class="card glass"><h3>Starter Landing — $80</h3><p>1-page site, contact form, Google Maps, social links, basic animations, 2 revisions, 3-day delivery, live deployment. For freelancers &amp; single-offer businesses.</p></article>
+        <article class="card glass"><h3>Business Website — $150</h3><p>Up to 5 pages, everything in Starter + gallery/video sections, FAQ accordion, enhanced animations, 3 revisions, 5-day delivery. For restaurants, clinics, shops.</p></article>
+        <article class="card glass"><h3>Complete Website — $300</h3><p>Up to 10 pages, everything in Business + premium animations, testimonial sliders, interactive Showcase elements, 5 revisions, 7-day delivery.</p></article>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">How To Start</p>
+      <div class="steps">
+        <div class="step glass"><div class="num">1</div><h3>Pick Your Lane</h3><p>Starter for one-off projects, Growth for monthly content, Custom for teams &amp; big builds. Not sure? Ask BM Bot on the Services page or message me.</p></div>
+        <div class="step glass"><div class="num">2</div><h3>Get a Quote</h3><p>Contact me with your details (the checklist on the Contact page helps). You get one clear price — no haggling mazes.</p></div>
+        <div class="step glass"><div class="num">3</div><h3>We Begin</h3><p>Order on Fiverr for buyer protection, or direct via Payoneer/bank/JazzCash. Websites: 50% advance → I start within 48 hours.</p></div>
+      </div>
+      <div class="grid g2">
+        <article class="card glass"><h3>How You Can Pay</h3><p><b style="color:#fff">Fiverr</b> — full buyer protection, order tracking, reviews. <b style="color:#fff">Direct</b> — Payoneer, bank transfer, or JazzCash. <b style="color:#fff">Websites</b> — 50% advance before start, 50% on delivery. Domain fees always in advance.</p></article>
+        <article class="card glass"><h3>Support, the human way</h3><p>No bots, no tickets lost in queues — I personally reply within 24 hours. Enterprise clients get priority handling and a direct line.</p></article>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ============================= FAQS ============================= -->
+<div class="page" id="page-faqs">
+  <div class="wrap">
+    <section class="blk" style="padding-top:150px">
+      <p class="kicker">FAQs</p>
+      <h2 class="sec">Answers to common questions.</h2>
+
+      <h3 style="font-size:22px;margin-top:44px">Websites</h3>
+      <div class="faq">
+        <details><summary>How much does a website cost?</summary><p class="a">Simple websites start at PKR 10,000, Business websites at PKR 18,000, and Complete websites at PKR 30,000. Every website starts with a FREE 1-page demo.</p></details>
+        <details><summary>What is the free demo?</summary><p class="a">Before you pay anything, I build a free 1-page demo of your website so you can see the design and quality first. If you like it, we continue to the full website.</p></details>
+        <details><summary>Why 50% advance?</summary><p class="a">The 50% advance confirms the order and covers the work time. You pay the remaining 50% only when the website is delivered.</p></details>
+        <details><summary>How long does a website take?</summary><p class="a">Most websites are ready in 3 to 7 days after the advance and your content are received. Landing pages in ~3 days, full sites in 5–7 days. Rush delivery available.</p></details>
+        <details><summary>What does a website include?</summary><p class="a">Mobile-friendly pages, your services and prices, photos, WhatsApp and call buttons, a contact form, Google Map location, and basic on-page SEO.</p></details>
+        <details><summary>What about the domain?</summary><p class="a">The domain is bought separately in your name after the advance (around $12/year plus setup). The service fee and the domain fee are always confirmed upfront, with no hidden extras.</p></details>
+        <details><summary>Why custom code instead of WordPress?</summary><p class="a">Speed and control. Custom HTML/CSS/JS loads faster, has no plugin headaches, no update breakages, and no monthly theme fees.</p></details>
+        <details><summary>Can I update the site myself?</summary><p class="a">Yes. You get a short, plain-language guide showing exactly what to edit for text and images. For bigger changes, my maintenance plan covers you.</p></details>
+        <details><summary>Can I take payments on my website?</summary><p class="a">Yes — payment buttons and links (JazzCash, bank transfer links, Stripe/PayPal buttons for international) can be integrated. Full e-commerce stores with carts are a separate custom service — ask for a quote.</p></details>
+      </div>
+
+      <h3 style="font-size:22px;margin-top:44px">Video Editing</h3>
+      <div class="faq">
+        <details><summary>How much does video editing cost?</summary><p class="a">One reel costs Rs. 2,000, and a pack of 5 reels costs Rs. 8,000. First-time brand collaborations get 1 to 2 free sample edits.</p></details>
+        <details><summary>How fast is delivery?</summary><p class="a">Most reels are delivered in 2 to 3 days after I receive your raw clips. Reels in 2–3 days, research reports in 3–5 days — rush delivery is available, just ask for a quote.</p></details>
+        <details><summary>What do I need to send?</summary><p class="a">Just your raw video clips and any style or music preference. I handle cuts, captions, color grading, and the final vertical format.</p></details>
+        <details><summary>What about revisions?</summary><p class="a">Every package includes revisions — we refine together until you're happy. I don't vanish after delivery; my reputation is built on finished, loved work.</p></details>
+      </div>
+
+      <h3 style="font-size:22px;margin-top:44px">QR Digital Menus</h3>
+      <div class="faq">
+        <details><summary>What is a QR digital menu?</summary><p class="a">A mobile-friendly online menu page for your restaurant with photos, descriptions, and prices. Customers scan a QR code on the table and see the full menu on their phone.</p></details>
+        <details><summary>How much does a QR menu cost?</summary><p class="a">A QR digital menu costs PKR 8,000 one-time in Pakistan and $30 for international clients. It includes the live menu page and the QR code image.</p></details>
+        <details><summary>What do you need from me?</summary><p class="a">Your menu (photo or list of dishes and prices), food photos, restaurant name and logo, WhatsApp number, and address.</p></details>
+        <details><summary>Can I update prices later?</summary><p class="a">Yes. Prices and dishes can be updated without reprinting anything, because the menu lives online behind the same QR code.</p></details>
+      </div>
+
+      <h3 style="font-size:22px;margin-top:44px">AI Chatbots &amp; Business</h3>
+      <div class="faq">
+        <details><summary>How much does an AI bot cost?</summary><p class="a">A WhatsApp AI bot costs PKR 30,000, an Instagram DM bot PKR 20,000, a website chatbot PKR 15,000, and a website voice bot PKR 25,000 — each including setup with your business information. Bot maintenance is PKR 5,000 per month (optional, confirmed before we start).</p></details>
+        <details><summary>What does the bot actually do?</summary><p class="a">It answers customer questions 24/7, shares prices and links, and hands over to you on WhatsApp when a customer wants to talk to a human.</p></details>
+        <details><summary>How much is Google Business Profile setup?</summary><p class="a">Profile setup costs PKR 5,000 standalone. The Website plus Profile bundle costs PKR 25,000, and monthly management is PKR 2,000 per month. I need your business name, service areas, phone number, website link, and a few photos — ownership stays with you.</p></details>
+        <details><summary>How can I pay?</summary><p class="a">Through Fiverr (with full buyer protection) or directly via Payoneer, bank transfer, or JazzCash. International clients pay via Fiverr or Payoneer. For websites: 50% advance before I start, 50% on delivery — always agreed upfront.</p></details>
+        <details><summary>Can we work together if I'm not in Pakistan?</summary><p class="a">Absolutely. Everything happens online: files via Google Drive, chat via email or WhatsApp, payments via Fiverr or Payoneer. Distance has never been an issue. After the first messages, we can also jump on a voice or video call for bigger projects.</p></details>
+        <details><summary>How do I start?</summary><p class="a">Message me on WhatsApp, tell me your business and the service you need, see the free demo or sample, then confirm with the advance and we begin.</p></details>
+        <details><summary>Who runs BM Digital?</summary><p class="a">BM Digital is a one-person business run by its founder, Bilal Mughal. You talk directly to the person doing your work.</p></details>
+        <details><summary>Which areas do you serve?</summary><p class="a">Rawalpindi and Islamabad, including Wah Cantt and Taxila, and clients anywhere in Pakistan or abroad through online work.</p></details>
+        <details><summary>What's the fastest way to reach you?</summary><p class="a">The contact form on the Contact page or Instagram DM (@bm_editor1). For protected payments and order tracking: Fiverr.</p></details>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ============================= CONTACT ============================= -->
+<div class="page" id="page-contact">
+  <div class="wrap">
+    <section class="blk" style="padding-top:150px">
+      <p class="kicker">Contact</p>
+      <h2 class="sec">Let's talk about your project.</h2>
+      <p class="lede">Tell me what you need — a website, a video, or a bot. I reply within 24 hours.</p>
+      <div class="contact-grid">
+        <div class="card glass">
+          <form class="form" id="cform">
+            <div><label for="cf-name">Your name<input id="cf-name" required placeholder="e.g. Ahmed Khan"></label></div>
+            <div><label for="cf-biz">Business &amp; city<input id="cf-biz" placeholder="e.g. Cafe in Rawalpindi"></label></div>
+            <div><label for="cf-svc">Service you need
+              <select id="cf-svc">
+                <option>Website — FREE 1-page demo first</option>
+                <option>Video Editing</option>
+                <option>AI Chatbot (WhatsApp / Instagram / Website)</option>
+                <option>QR Digital Menu</option>
+                <option>Google Business Profile</option>
+                <option>Something else</option>
+              </select></label></div>
+            <div><label for="cf-msg">Tell me about your project<textarea id="cf-msg" rows="4" placeholder="What do you need, and by when?"></textarea></label></div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <button type="submit" class="btn btn-white">Send via WhatsApp</button>
+              <button type="button" class="btn btn-ghost" id="mailbtn">Send via Email</button>
+            </div>
+            <p style="color:var(--muted);font-size:13.5px">The buttons open WhatsApp or your email app with everything pre-written — nothing is sent until you press send there.</p>
+          </form>
+        </div>
+        <div class="card glass">
+          <div class="kv"><b>WhatsApp</b><a href="https://wa.me/923175493082" target="_blank" rel="noopener">+92 317 5493082</a></div>
+          <div class="kv"><b>Email</b><a href="mailto:armanzaheer808@gmail.com">armanzaheer808@gmail.com</a></div>
+          <div class="kv"><b>Instagram</b><a href="https://www.instagram.com/bm_editor1/" target="_blank" rel="noopener">@bm_editor1 — on Instagram</a></div>
+          <div class="kv"><b>Fiverr</b><a href="https://www.fiverr.com/bilalmughal309/" target="_blank" rel="noopener">fiverr.com/bilalmughal309</a><p style="color:var(--muted);font-size:14px;margin-top:4px">Order directly with buyer protection — search "BM Digital" on Fiverr, 3 gigs live now.</p></div>
+          <div class="kv"><b>Local Office</b><span style="font-size:17px;font-weight:500">New City Phase 2, Wah Cantt, Taxila, Punjab, Pakistan</span><p style="color:var(--muted);font-size:14px;margin-top:4px">Serving Rawalpindi, Islamabad, Wah Cantt &amp; Taxila — and clients worldwide online.</p></div>
+          <div class="kv"><b>Main Website</b><a href="https://bm-digital-pk.pages.dev/" target="_blank" rel="noopener">bm-digital-pk.pages.dev</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="kicker">What To Include In Your Message</p>
+      <h2 class="sec">Copy this checklist — you'll get a faster, sharper quote.</h2>
+      <div class="grid g3">
+        <article class="card glass"><h3>For Video Editing</h3><p>1. What kind of video? (Reel / ad / cinematic)<br>2. Your footage link (Google Drive / Dropbox)<br>3. Your deadline<br>4. One video you like, as a style reference<br>5. Any must-include text or branding</p></article>
+        <article class="card glass"><h3>For a Website</h3><p>1. Business name &amp; city<br>2. Pages you need (Home, Menu, Contact…)<br>3. Your logo, text &amp; photos (or I guide you)<br>4. A website style you admire<br>5. Do you have a domain already?</p></article>
+        <article class="card glass"><h3>For AI Chatbots</h3><p>1. WhatsApp, Instagram, or website bot?<br>2. Your business type &amp; services<br>3. Common customer questions<br>4. Your menu / services list &amp; prices<br>5. Your timeline</p></article>
+      </div>
+      <div class="steps">
+        <div class="step glass"><div class="num">1</div><h3>Reply Within 24 Hours</h3><p>I personally read every message — no bots, no assistants. Most replies land much faster than 24 hours.</p></div>
+        <div class="step glass"><div class="num">2</div><h3>One Clear Quote</h3><p>You get a single price and a real timeline. No "DM for price" games, no hidden fees, no upsell pressure.</p></div>
+        <div class="step glass"><div class="num">3</div><h3>Quick Start</h3><p>Say yes → (50% advance for websites) → I start. Most projects kick off within 48 hours of agreement.</p></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ============================= PRIVACY & TERMS ============================= -->
+<div class="page legal" id="page-privacy">
+  <div class="wrap">
+    <section class="blk" style="padding-top:150px">
+      <p class="kicker">Legal</p>
+      <h2 class="sec">Privacy Policy</h2>
+      <p>Last updated: October 2026 · BM Digital (Bilal Mughal). Your privacy matters — this policy explains in plain language what information I collect when you visit this website or work with me, how I use it, and the rights you have.</p>
+      <h3>1. Information I Collect</h3>
+      <p><b style="color:#fff">a) Contact information</b> — when you fill in the contact form, email me, or message me on Instagram/Fiverr, I receive your name, email address, and any project details you choose to share. <b style="color:#fff">b) Project files</b> — footage, logos, brand assets or scripts for video projects; business details for websites; business info, FAQs and menu/services lists for chatbot work. <b style="color:#fff">c) Communications</b> — our messages and revision notes, kept so I can deliver accurately. <b style="color:#fff">d) Technical data</b> — basic browser type, pages visited, approximate country/city-level location; hosts such as Netlify may keep standard server logs. I don't run advertising trackers, fingerprinting, or visitor profiling.</p>
+      <h3>2. How I Use Your Information</h3>
+      <ul><li>To reply to your inquiries and provide quotes.</li><li>To deliver your project: editing your videos, building your website, managing your AI chatbot tasks.</li><li>To send project updates, revision drafts, and delivery links.</li><li>To improve my services based on aggregated, anonymous feedback.</li><li>To comply with legal obligations (for example, tax records for payments received).</li></ul>
+      <p style="margin-top:10px">I will never use your information for purposes you didn't agree to.</p>
+      <h3>3. How I Share Your Information</h3>
+      <p>If you order through Fiverr, that platform processes your payment and order details under its own privacy policy; if your site is deployed on Netlify or similar, that host stores the site files. I do not sell, rent, or trade your personal information to anyone, ever, and your data is never shared with advertising networks or data brokers. I would only disclose information if required by law — and I'd tell you first unless legally forbidden.</p>
+      <h3>4. Portfolio Use</h3>
+      <p>Finished client work may be shown in my portfolio unless you ask me not to — just say the word before delivery and your project stays private. Your raw footage and unpublished materials are never shared publicly.</p>
+      <h3>5. Data Retention &amp; Security</h3>
+      <p>Project files and communications are kept for as long as needed to deliver your project and provide after-delivery support — typically up to 12 months after completion, then deleted on request. Invoices and payment records may be kept longer where tax law requires it. I use secure accounts with strong passwords and two-factor authentication where available, and keep no unnecessary copies of your files.</p>
+      <h3>6. Your Rights</h3>
+      <p>Access (ask what data I hold about you), correction, deletion (subject to legal record-keeping), and objection (ask me not to show your project in my portfolio). To exercise any right, email <a href="mailto:armanzaheer808@gmail.com" style="color:#fff">armanzaheer808@gmail.com</a> — I respond within 7 days.</p>
+      <h3>7. Cookies &amp; Children's Privacy</h3>
+      <p>This site doesn't set advertising or tracking cookies. My services are offered to clients aged 18 and over (or younger clients working through a parent/guardian); I don't knowingly collect data from children under 13. If this policy changes, I'll update the "Last updated" date above.</p>
+
+      <h2 class="sec" style="margin-top:70px">Legal Terms</h2>
+      <p>Last updated: October 2026 · BM Digital (Bilal Mughal). These terms keep projects smooth and fair for both sides — in plain language, no legalese ambushes.</p>
+      <h3>1. Services</h3>
+      <p>BM Digital (Bilal Mughal, operating from Pakistan) provides five services: video editing (Reels, Shorts, TikToks, AI films, cinematic edits), website development (custom-coded business websites and landing pages), AI chatbots (WhatsApp &amp; Instagram auto-reply assistants), QR digital menus (scan-to-view restaurant menus), and Google Business Profile setup (profile creation, verification guidance, and management). Service details, tiers, and prices are listed on the Market and Pricing pages.</p>
+      <h3>2. Ordering &amp; Payment</h3>
+      <p>Every project gets one clear quoted price and timeline before work starts; the quote is valid for 14 days. Fiverr orders are processed under Fiverr's own terms, with their buyer protection. Direct orders are payable via Payoneer, bank transfer, or JazzCash as agreed. Websites run on 50% advance before start and 50% on delivery.</p>
+    </section>
+  </div>
+</div>
+
+<div class="page legal" id="page-refund">
+  <div class="wrap">
+    <section class="blk" style="padding-top:150px">
+      <p class="kicker">Legal</p>
+      <h2 class="sec">Return &amp; Refund Policy</h2>
+      <p>Last updated: October 2026 · BM Digital (Bilal Mughal). Because every service here is digital and made for one client, this policy is simple and honest.</p>
+      <h3>1. Full refund before work starts</h3>
+      <p>If you paid an advance and I have not started your work yet, you get a full refund of the amount paid.</p>
+      <h3>2. After work starts</h3>
+      <p>Once work has started, the advance is non-refundable for the work already done. Any undelivered part of a project is refunded. Revisions are offered first, so most issues are fixed without a refund.</p>
+      <h3>3. Fiverr orders</h3>
+      <p>Orders placed through Fiverr follow Fiverr's own refund and cancellation process, with Fiverr buyer protection.</p>
+      <h3>4. How to ask</h3>
+      <p>Email armanzaheer808@gmail.com or WhatsApp +92 317 5493082 with your order details. Approved refunds go back by the original payment method within 7 working days.</p>
+    </section>
+  </div>
+</div>
+
+<div class="page legal" id="page-delivery">
+  <div class="wrap">
+    <section class="blk" style="padding-top:150px">
+      <p class="kicker">Legal</p>
+      <h2 class="sec">Service Delivery Policy</h2>
+      <p>Last updated: October 2026 · BM Digital (Bilal Mughal). All services are digital — there is no physical shipping, no courier, and no delivery fee.</p>
+      <h3>How you receive your work</h3>
+      <ul><li>Websites — a live website link, on your own domain where agreed.</li><li>Video edits — a download link for the finished video file.</li><li>QR menus — a QR code image and a live menu link.</li><li>AI chatbots — a live bot on your WhatsApp, Instagram, or website, as agreed.</li><li>Google Business Profile — handover of your live profile.</li><li>Posters and flyers — JPEG image files.</li></ul>
+      <h3>Typical delivery times</h3>
+      <p>Reels and edits: 2–3 days. Websites: 3–7 days. QR menus and posters: 1–3 days. AI chatbots: 3–5 days. Exact dates are confirmed in your quote before work starts.</p>
+      <h3>Contact</h3>
+      <p>Questions about delivery: WhatsApp +92 317 5493082 or armanzaheer808@gmail.com. Local office: New City Phase 2, Wah Cantt, Taxila, Punjab, Pakistan — online-first, so most clients are served fully online.</p>
+    </section>
+  </div>
+</div>
+
+<div class="page legal" id="page-allservices">
+  <div class="wrap">
+    <section class="blk" style="padding-top:150px">
+      <p class="kicker">All Services</p>
+      <h2 class="sec">All Services — 8 Services</h2>
+      <p>Every service below is a real service BM Digital offers, with its starting price. A free 1-page demo comes first for websites.</p>
+      <div class="grid g3">
+        <article class="card glass"><h3>1. Modern Websites</h3><p>PKR 10,000 / 18,000 / 30,000 — business websites, up to 10 pages on the Complete plan.</p></article>
+        <article class="card glass"><h3>2. Video Editing</h3><p>Rs. 2,000 per reel, 5 reels for Rs. 8,000 — Reels, Shorts, and TikToks.</p></article>
+        <article class="card glass"><h3>3. QR Digital Menus</h3><p>PKR 8,000 local / $30 international — scan-to-view restaurant menus.</p></article>
+        <article class="card glass"><h3>4. AI Chatbots</h3><p>Website chatbot PKR 15,000, Instagram PKR 20,000, WhatsApp PKR 30,000, booking PKR 25,000, real-estate lead PKR 30,000, website voice PKR 25,000.</p></article>
+        <article class="card glass"><h3>5. Google Business Profile</h3><p>Setup PKR 5,000, management PKR 2,000 per month.</p></article>
+        <article class="card glass"><h3>6. Poster &amp; Flyer Design</h3><p>PKR 2,000 per poster.</p></article>
+        <article class="card glass"><h3>7. AI Films &amp; Spokesperson</h3><p>Clearly disclosed as AI, priced extra — for gig gallery and promo use, never as a real-person profile intro.</p></article>
+        <article class="card glass"><h3>8. Website Maintenance</h3><p>PKR 3,000 per month — updates, fixes, and support for your live site.</p></article>
+      </div>
+      <p style="margin-top:20px">WhatsApp: +92 317 5493082 · Email: armanzaheer808@gmail.com · Local office: New City Phase 2, Wah Cantt, Taxila, Punjab, Pakistan.</p>
+    </section>
+  </div>
+</div>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer>
+  <div class="foot">
+    <div>
+      <a class="wordmark" href="#home" data-go="home" style="display:inline-block;margin-bottom:12px">BM Digital <span>· Bilal Mughal</span></a>
+      <p>Websites, video editing, AI chatbots, QR menus &amp; Google Business Profiles — from Rawalpindi, Pakistan, for clients everywhere.</p>
+      <p style="margin-top:14px">Local office: New City Phase 2, Wah Cantt, Taxila, Punjab, Pakistan · WhatsApp +92 317 5493082</p>
+      <p style="margin-top:14px">Original site: <a href="https://bm-digital-pk.pages.dev/" target="_blank" rel="noopener" style="display:inline;padding:0;color:#fff">bm-digital-pk.pages.dev</a></p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <button class="lnk" data-go="home">Home</button>
+      <button class="lnk" data-go="work">Work</button>
+      <button class="lnk" data-go="about">About Us</button>
+      <button class="lnk" data-go="contact">Contact Us</button>
+      <button class="lnk" data-go="faqs">FAQs</button>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <button class="lnk" data-go="services">Websites</button>
+      <button class="lnk" data-go="services">Video Editing</button>
+      <button class="lnk" data-go="services">AI Chatbots</button>
+      <button class="lnk" data-go="services">QR Digital Menus</button>
+      <button class="lnk" data-go="pricing">Market &amp; Pricing</button>
+    </div>
+    <div>
+      <h4>Contact &amp; Legal</h4>
+      <a href="https://wa.me/923175493082" target="_blank" rel="noopener">WhatsApp +92 317 5493082</a>
+      <a href="mailto:armanzaheer808@gmail.com">armanzaheer808@gmail.com</a>
+      <a href="https://www.fiverr.com/bilalmughal309/" target="_blank" rel="noopener">Fiverr — BM Digital</a>
+      <button class="lnk" data-go="privacy">Privacy Policy &amp; Legal Terms</button>
+      <button class="lnk" data-go="refund">Return &amp; Refund Policy</button>
+      <button class="lnk" data-go="delivery">Service Delivery Policy</button>
+      <button class="lnk" data-go="allservices">All Services</button>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 BM Digital — Bilal Mughal. All rights reserved.</span>
+    <span>Directory: Home · Services · Work · About · Pricing · FAQs · Contact · Privacy</span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/923175493082?text=Hi%20Bilal%2C%20I%20have%20a%20project%20in%20mind." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.2c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script>
+/* ---------- Page routing (multi-page feel, same pages as original) ---------- */
+var pages=['home','services','work','about','pricing','faqs','contact','privacy','refund','delivery','allservices'];
+function go(id){
+  if(pages.indexOf(id)<0) id='home';
+  pages.forEach(function(p){document.getElementById('page-'+p).classList.toggle('active',p===id);});
+  document.querySelectorAll('[data-go]').forEach(function(b){if(b.tagName==='BUTTON')b.classList.toggle('active',b.getAttribute('data-go')===id);});
+  document.getElementById('mobmenu').classList.remove('open');
+  document.getElementById('burger').setAttribute('aria-expanded','false');
+  window.scrollTo({top:0,behavior:'instant'});
+  if(history.replaceState) history.replaceState(null,'','#'+id);
+  requestAnimationFrame(observeReveals);
+}
+document.addEventListener('click',function(e){
+  var t=e.target.closest('[data-go]'); if(!t) return;
+  e.preventDefault(); go(t.getAttribute('data-go'));
+});
+document.getElementById('burger').addEventListener('click',function(){
+  var m=document.getElementById('mobmenu'),open=m.classList.toggle('open');
+  this.setAttribute('aria-expanded',open?'true':'false');
+});
+var start=(location.hash||'#home').slice(1); if(pages.indexOf(start)>=0 && start!=='home') go(start);
+
+/* ---------- Contact form -> WhatsApp / Email (opens user's own app) ---------- */
+function formText(){
+  var n=document.getElementById('cf-name').value.trim(),
+      b=document.getElementById('cf-biz').value.trim(),
+      s=document.getElementById('cf-svc').value,
+      m=document.getElementById('cf-msg').value.trim();
+  return 'Hi Bilal, I am '+(n||'...')+(b?(' ('+b+')'):'')+'.\nService: '+s+'\n'+(m||'');
+}
+document.getElementById('cform').addEventListener('submit',function(e){
+  e.preventDefault();
+  window.open('https://wa.me/923175493082?text='+encodeURIComponent(formText()),'_blank');
+});
+document.getElementById('mailbtn').addEventListener('click',function(){
+  location.href='mailto:armanzaheer808@gmail.com?subject='+encodeURIComponent('Project enquiry — BM Digital')+'&body='+encodeURIComponent(formText());
+});
+
+/* ---------- BM Bot demo (answers from BM Digital's real info) ---------- */
+var botlog=document.getElementById('botlog');
+function botAnswer(q){
+  q=q.toLowerCase();
+  if(q.indexOf('website')>=0&&(q.indexOf('much')>=0||q.indexOf('cost')>=0||q.indexOf('price')>=0)) return 'Websites in Pakistan: Simple PKR 10,000 · Business PKR 18,000 · Complete PKR 30,000. International: $80 / $150 / $300. Every website starts with a FREE 1-page demo, then 50% advance, 50% on delivery.';
+  if(q.indexOf('discount')>=0) return 'Students and non-profits get special pricing, monthly/bulk work is cheaper per unit, and first-time brand collabs can include 1 free sample edit. Just ask Bilal on WhatsApp: +92 317 5493082.';
+  if(q.indexOf('order')>=0||q.indexOf('start')>=0) return 'Easy: message Bilal on WhatsApp (+92 317 5493082), tell him your business and the service you need, see the free demo or sample, then confirm with the advance and work begins — most projects kick off within 48 hours. Or order on Fiverr (search "BM Digital") for buyer protection.';
+  if(q.indexOf('video')>=0||q.indexOf('edit')>=0||q.indexOf('reel')>=0) return 'Video editing: Reels, Shorts & TikToks with hook-first openings, beat-synced cuts, kinetic captions and cinematic grading. Pakistan: 1 reel Rs. 2,000, 5 reels Rs. 8,000. International: $15 / $35 / $70 tiers. First-time brand collabs get 1–2 free samples.';
+  if(q.indexOf('bot')>=0||q.indexOf('chat')>=0) return 'AI chatbots: Website bot PKR 15,000 · Instagram bot PKR 20,000 · Website voice bot PKR 25,000 · WhatsApp bot PKR 30,000. Maintenance PKR 5,000/month (optional). They answer from your real business info, 24/7, and hand over to you on WhatsApp.';
+  if(q.indexOf('menu')>=0||q.indexOf('qr')>=0) return 'QR digital menus cost PKR 8,000 one-time in Pakistan ($30 international) — a live menu page plus the QR code image, with updates anytime and no reprinting.';
+  if(q.indexOf('google')>=0||q.indexOf('profile')>=0) return 'Google Business Profile: setup PKR 5,000, Website + Profile bundle PKR 25,000, monthly management PKR 2,000/month. Ownership always stays with you.';
+  if(q.indexOf('bilal')>=0||q.indexOf('who')>=0) return 'Bilal Mughal is the founder of BM Digital — a one-person studio in Rawalpindi, Pakistan. Video editor, website builder and AI chatbot developer. You work directly with him, start to finish.';
+  if(q.indexOf('pay')>=0) return 'Pay via Fiverr (buyer protection), or directly by Payoneer, bank transfer, or JazzCash. Websites: 50% advance, 50% on delivery.';
+  if(q.indexOf('time')>=0||q.indexOf('long')>=0||q.indexOf('deliver')>=0) return 'Timelines: reels 2–3 days, websites 3–7 days, chatbots 3–5 days. Bilal replies to messages within 24 hours.';
+  return 'I can answer about websites, video editing, AI chatbots, QR menus, Google profiles, pricing and how to order. For anything else, Bilal replies personally on WhatsApp: +92 317 5493082.';
+}
+function askBot(text){
+  if(!text.trim()) return;
+  var me=document.createElement('div'); me.className='msg me'; me.textContent=text; botlog.appendChild(me);
+  var bot=document.createElement('div'); bot.className='msg bot'; bot.textContent=botAnswer(text); botlog.appendChild(bot);
+  bot.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+document.getElementById('botsend').addEventListener('click',function(){
+  var i=document.getElementById('botin'); askBot(i.value); i.value='';
+});
+document.getElementById('botin').addEventListener('keydown',function(e){if(e.key==='Enter'){askBot(this.value); this.value='';}});
+document.querySelectorAll('[data-q]').forEach(function(b){b.addEventListener('click',function(){askBot(b.getAttribute('data-q'));});});
+
+/* ---------- Reveal on scroll ---------- */
+var io;
+function observeReveals(){
+  if(io) io.disconnect();
+  io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
+  document.querySelectorAll('.page.active .reveal:not(.in)').forEach(function(el){io.observe(el);});
+}
+observeReveals();
+/* Safety: never leave content hidden if scroll events don't fire (e.g. full-page capture) */
+setTimeout(function(){document.querySelectorAll('.page.active .reveal').forEach(function(el){el.classList.add('in');});},2600);
+
+/* ---------- Scroll-coupled engine: EVERYTHING below is driven by scroll position only — no timers, no autoplay ---------- */
+var prog=document.getElementById('progress');
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function clamp01(v){return Math.max(0,Math.min(1,v));}
+function secProgress(el,lead){ /* 0 when section enters, 1 when it leaves the viewport centre zone */
+  if(!el) return 0; var r=el.getBoundingClientRect(), vh=window.innerHeight;
+  return clamp01((vh-(r.top+(lead||0)))/(vh+r.height*0.55));
+}
+/* Word-by-word headline: split once */
+var wordline=document.getElementById('wordline'), words=[];
+if(wordline){ wordline.innerHTML=wordline.textContent.trim().split(/\s+/).map(function(w){return '<span class="w">'+w+'</span>';}).join(' '); words=wordline.querySelectorAll('.w'); }
+/* Orbit items on a circle */
+var orbitItems=document.querySelectorAll('.orbit-item');
+function placeOrbit(){
+  var box=document.getElementById('orbitBox'); if(!box) return;
+  var R=box.offsetWidth/2;
+  orbitItems.forEach(function(it,i){ var a=(i/orbitItems.length)*Math.PI*2-Math.PI/2; it.style.left=(R+Math.cos(a)*R)+'px'; it.style.top=(R+Math.sin(a)*R)+'px'; });
+}
+placeOrbit(); window.addEventListener('resize',placeOrbit);
+/* Pinned panel copy (own services only) */
+var pinCopy=[['Editing that stops the scroll','Hook-first cuts, beat-synced, captioned.'],['Websites & menus that sell','Mobile-first pages and scan-to-order QR menus.'],['Bots that never sleep','Your customers answered at 3 PM — and 3 AM.']];
+var pinImgs=document.querySelectorAll('#heroMedia img'), pinDots=document.querySelectorAll('#heroDots i');
+var heroLabels=['Showreel · Editing','Showreel · QR Menus','Showreel · AI Bots'];
+var swapWords=['websites','reels','menus','bots'];
+function onScroll(){
+  var y=window.scrollY, h=document.documentElement.scrollHeight-window.innerHeight;
+  prog.style.width=(h>0?(y/h)*100:0)+'%';
+  if(reduce) return;
+  var homeActive=document.getElementById('page-home').classList.contains('active');
+  if(!homeActive) return;
+  /* Hero "video": scroll scrubs through 3 own images + slow zoom */
+  var hp=clamp01(y/(window.innerHeight*0.9));
+  var idx=Math.min(2,Math.floor(hp*3));
+  pinImgs.forEach(function(im,i){ im.classList.toggle('on',i===idx); im.style.transform='scale('+(1.06+hp*0.07)+')'; });
+  pinDots.forEach(function(d,i){ d.classList.toggle('on',i===idx); });
+  var hb=document.getElementById('heroBadge'); if(hb) hb.textContent=heroLabels[idx];
+  /* Colour-fill headlines */
+  ['pinHead','orbitHead','mqHead','duoHead'].forEach(function(id){ var el=document.getElementById(id); if(el) el.style.setProperty('--p',(secProgress(el,-80)*100)+'%'); });
+  /* Pinned 3D glass panels: centre panel rotates to front as you scroll; copy flips left -> right */
+  var wrap=document.getElementById('pinWrap');
+  if(wrap){
+    var wr=wrap.getBoundingClientRect();
+    var pp=clamp01(-wr.top/(wrap.offsetHeight-window.innerHeight||1));
+    var panels=document.querySelectorAll('.panel3d');
+    panels.forEach(function(pn,i){
+      var d=i-pp*2; /* -2..0 distance from active */
+      var ad=Math.abs(d);
+      pn.style.transform='translateX('+(d*46)+'px) rotateY('+(-d*34)+'deg) translateZ('+(-ad*120)+'px) scale('+(1-ad*0.13)+')';
+      pn.style.opacity=String(1-ad*0.35); pn.style.zIndex=String(10-Math.round(ad*5));
+    });
+    var ci=Math.round(pp*2);
+    var flip=document.getElementById('pinFlip');
+    if(flip){
+      var local=(pp*2)%1, ph=local<0.5?local*2:(local-1)*2; /* -1..1 sweep */
+      flip.style.transform='rotateY('+(ph*55)+'deg)';
+      flip.style.opacity=String(1-Math.abs(ph)*0.55);
+      flip.childNodes[0].textContent=pinCopy[ci][0];
+      var sub=document.getElementById('pinFlipSub'); if(sub) sub.textContent=pinCopy[ci][1]+' · Keep scrolling — nothing plays on its own.';
+    }
+  }
+  /* Word-by-word lighting */
+  if(wordline && words.length){
+    var wp=secProgress(wordline,-40), lit=Math.floor(wp*words.length*1.15);
+    words.forEach(function(w,i){ w.classList.toggle('on',i<lit); });
+  }
+  /* Orbit rotation + changing last word, both from scroll */
+  var orot=document.getElementById('orbitRot');
+  if(orot){
+    var deg=y*0.14;
+    orot.style.transform='rotate('+deg+'deg)';
+    orbitItems.forEach(function(it){ it.style.transform='rotate('+(-deg)+'deg)'; });
+    var op=secProgress(document.getElementById('orbitHead'),0);
+    var sw=document.getElementById('swapWord'); if(sw) sw.textContent=swapWords[Math.min(3,Math.floor(op*4))];
+  }
+  /* Scroll-driven strips (no CSS animation) */
+  var mq=document.getElementById('mq'); if(mq) mq.style.transform='translateX('+(-((y*0.45)%(mq.scrollWidth/2||1)))+'px)';
+  var ct=document.getElementById('cardsTrack'); if(ct) ct.style.transform='translateX('+(-((y*0.32)%(ct.scrollWidth/2||1)))+'px)';
+}
+window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+document.querySelectorAll('.tilt').forEach(function(card){
+  card.addEventListener('mousemove',function(e){
+    if(reduce) return;
+    var r=card.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-0.5, yy=(e.clientY-r.top)/r.height-0.5;
+    card.style.transform='perspective(900px) rotateY('+(x*7)+'deg) rotateX('+(-yy*7)+'deg) translateY(-3px)';
+  });
+  card.addEventListener('mouseleave',function(){card.style.transform='';});
+});
+
+/* ---------- Videos: continuous muted autoplay loop that must NOT stop ----------
+   Hero background video keeps looping the whole time the Home page is open —
+   on load, on scroll, after page switches and after the tab becomes visible
+   again. Demo videos loop whenever they are in view.
+   Root causes fixed: (1) the hero section now clips the video to its own box
+   (position:relative + overflow:hidden above) instead of stretching it over
+   the whole page; (2) loop is enforced in JS as well as the attribute, with a
+   manual restart on 'ended' for browsers that drop the loop attribute;
+   (3) play() is retried on canplay / visibility / first tap, and a light
+   watchdog restarts any video a browser paused on its own (scroll, stall,
+   power saving) — nothing in this page pauses these videos. */
+(function(){
+  var vids=[].slice.call(document.querySelectorAll('video[autoplay]'));
+  if(!vids.length) return;
+  if(reduce){ vids.forEach(function(v){ v.removeAttribute('autoplay'); v.pause(); }); return; }
+  function tryPlay(v){
+    if(document.hidden || v.readyState===0) return;
+    v.muted=true;
+    if(!v.paused) return;
+    var p=v.play(); if(p&&p.catch) p.catch(function(){});
+  }
+  vids.forEach(function(v){
+    var isHero=v.id==='heroBgVideo';
+    v.muted=true; v.defaultMuted=true; v.loop=true; v.autoplay=true; v.playsInline=true;
+    v.setAttribute('muted',''); v.setAttribute('loop',''); v.setAttribute('playsinline',''); v.setAttribute('autoplay','');
+    v.dataset.inview=isHero?'1':'0';
+    tryPlay(v);
+    v.addEventListener('canplay',function(){ tryPlay(v); });
+    v.addEventListener('loadeddata',function(){ tryPlay(v); });
+    /* Manual loop fallback: if 'ended' ever fires despite loop, restart at once */
+    v.addEventListener('ended',function(){ try{ v.currentTime=0; }catch(e){} tryPlay(v); });
+    /* Browser paused it on its own (scroll / stall / OS) — resume. Hero has no
+       controls, so a pause is never the user's; demos resume only in view. */
+    v.addEventListener('pause',function(){
+      setTimeout(function(){
+        if(isHero){ if(document.getElementById('page-home').classList.contains('active')) tryPlay(v); }
+        else if(v.dataset.inview==='1') tryPlay(v);
+      },60);
+    });
+    v.addEventListener('stalled',function(){ v.addEventListener('canplay',function(){ tryPlay(v); },{once:true}); });
+    if(!isHero && 'IntersectionObserver' in window){
+      new IntersectionObserver(function(es){es.forEach(function(en){
+        v.dataset.inview=en.isIntersecting?'1':'0';
+        if(en.isIntersecting) tryPlay(v);
+      });},{threshold:.15}).observe(v);
+    }
+  });
+  /* Tab visible again -> resume everything that should be playing */
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden) return;
+    vids.forEach(function(v){
+      if(v.id==='heroBgVideo'){ if(document.getElementById('page-home').classList.contains('active')) tryPlay(v); }
+      else if(v.dataset.inview==='1') tryPlay(v);
+    });
+  });
+  /* If a browser blocked the very first autoplay (data saver / no gesture yet),
+     the first tap, click or keypress unlocks it for good */
+  function unlock(){ vids.forEach(function(v){
+    if(v.id==='heroBgVideo' || v.dataset.inview==='1') tryPlay(v);
+  }); }
+  ['pointerdown','touchend','keydown'].forEach(function(ev){ document.addEventListener(ev,unlock,{passive:true}); });
+  /* Watchdog: every 2s, restart any hero/demo video that ended up paused while
+     it should be playing — this is what keeps the hero looping on scroll too */
+  setInterval(function(){
+    if(document.hidden) return;
+    var homeActive=document.getElementById('page-home').classList.contains('active');
+    vids.forEach(function(v){
+      if(v.paused && v.readyState>=2){
+        if(v.id==='heroBgVideo'){ if(homeActive) tryPlay(v); }
+        else if(v.dataset.inview==='1') tryPlay(v);
+      }
+    });
+  },2000);
+})();
+
+/* ---------- Hero video: dedicated keeper (the front video must never freeze) ----------
+   The generic block above restarts paused videos every 2s, but a video can
+   also freeze WITHOUT firing 'pause' — the first seconds of buffer play out,
+   the stream/decoder stalls, and currentTime simply stops advancing. That is
+   the "plays 3 seconds, then stops" failure. This keeper runs every 500ms
+   while the Home page is open: it resumes any pause, restarts on 'ended' in
+   case the loop attribute is ignored for this file, detects a frozen
+   currentTime and nudges play(), and — only if the stream has starved
+   (readyState < 3) and at most once every 6s — reloads the source. Scrolling
+   never pauses it: nothing here or above pauses the hero on scroll. */
+(function(){
+  var hero=document.getElementById('heroBgVideo');
+  if(!hero || reduce) return;
+  function homeActive(){ var p=document.getElementById('page-home'); return p && p.classList.contains('active'); }
+  function playHero(){
+    if(document.hidden) return;
+    hero.muted=true; hero.volume=0; hero.loop=true;
+    if(hero.ended){ try{ hero.currentTime=0; }catch(e){} }
+    if(hero.paused || hero.ended){ var p=hero.play(); if(p&&p.catch) p.catch(function(){}); }
+  }
+  hero.addEventListener('ended',function(){ try{ hero.currentTime=0; }catch(e){} playHero(); });
+  hero.addEventListener('waiting',function(){ hero.addEventListener('canplay',playHero,{once:true}); });
+  var lastT=-1, stuck=0, lastLoad=0;
+  setInterval(function(){
+    if(document.hidden || !homeActive()){ lastT=-1; stuck=0; return; }
+    if(hero.ended || hero.paused){ playHero(); lastT=-1; stuck=0; return; }
+    if(hero.readyState>=2){
+      if(Math.abs(hero.currentTime-lastT)<0.01) stuck++; else stuck=0;
+      lastT=hero.currentTime;
+      if(stuck>=3){ /* ~1.5s with no progress while "playing" = frozen */
+        stuck=0;
+        var now=Date.now();
+        if(hero.readyState<3 && now-lastLoad>6000){ lastLoad=now; try{ hero.load(); }catch(e){} }
+        playHero();
+      }
+    }
+  },500);
+})();
+
+/* ---------- Three.js scroll-driven 3D background (Scale-style) ---------- */
+(function(){
+  if(reduce || !window.THREE) return;
+  try{
+    var canvas=document.getElementById('gl');
+    var renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+    var scene=new THREE.Scene();
+    var camera=new THREE.PerspectiveCamera(55,1,0.1,100); camera.position.z=9;
+    var group=new THREE.Group(); scene.add(group);
+    // Wireframe geometry cluster — abstract shapes, no copied assets
+    var mat=new THREE.LineBasicMaterial({color:0xffffff,transparent:true,opacity:0.20});
+    var mat2=new THREE.LineBasicMaterial({color:0xffffff,transparent:true,opacity:0.10});
+    function wire(geo,m,x,y,z,s){var o=new THREE.LineSegments(new THREE.WireframeGeometry(geo),m);o.position.set(x,y,z);o.scale.setScalar(s);group.add(o);return o;}
+    var a=wire(new THREE.IcosahedronGeometry(1.6,1),mat,3.4,0.6,0,1);
+    var b=wire(new THREE.TorusGeometry(1.1,0.34,10,28),mat2,-3.8,-1.4,-1,1);
+    var c=wire(new THREE.OctahedronGeometry(0.9,0),mat,3.9,-2.2,-0.5,1);
+    var d=wire(new THREE.BoxGeometry(1.1,1.1,1.1),mat2,-3.6,2.0,-1.2,1);
+    // Particle field
+    var n=650, pos=new Float32Array(n*3);
+    for(var i=0;i<n;i++){pos[i*3]=(Math.random()-0.5)*22;pos[i*3+1]=(Math.random()-0.5)*14;pos[i*3+2]=(Math.random()-0.5)*7-1;}
+    var pg=new THREE.BufferGeometry(); pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    var pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xffffff,size:0.035,transparent:true,opacity:0.55}));
+    scene.add(pts);
+    var mx=0,my=0;
+    window.addEventListener('mousemove',function(e){mx=(e.clientX/window.innerWidth-0.5);my=(e.clientY/window.innerHeight-0.5);},{passive:true});
+    function resize(){renderer.setSize(window.innerWidth,window.innerHeight);camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();}
+    window.addEventListener('resize',resize); resize();
+    var t=0;
+    (function loop(){
+      requestAnimationFrame(loop); t+=0.0035;
+      var sp=hScroll();
+      group.rotation.y=t*1.4 + sp*2.4 + mx*0.35;
+      group.rotation.x=sp*1.1 + my*0.25;
+      group.position.y=sp*1.6;
+      a.rotation.x=t*2.1; a.rotation.y=t*1.6;
+      b.rotation.x=t*1.4; b.rotation.z=t;
+      c.rotation.y=t*2.4; d.rotation.x=t*1.2; d.rotation.y=t*1.8;
+      pts.rotation.y=t*0.35 + sp*0.8;
+      camera.position.x=mx*0.6; camera.position.y=-my*0.4;
+      camera.lookAt(0,0,0);
+      renderer.render(scene,camera);
+    })();
+    function hScroll(){var h=document.documentElement.scrollHeight-window.innerHeight;return h>0?window.scrollY/h:0;}
+  }catch(err){/* 3D is decorative — page works without it */}
+})();
+</script>
+</body>
+</html>
